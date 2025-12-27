@@ -6,16 +6,11 @@
 
     <div class="relative z-10 max-w-4xl ml-auto">
       <!-- Emoji decoration -->
-      <div class="mb-8 text-6xl md:text-8xl animate-bounce text-right" style="animation-delay: 0s">🔒</div>
 
       <!-- Section Header -->
       <div class="mb-12 text-right">
-        <span class="font-mono text-[10px] uppercase tracking-[0.3em] text-yellow-300">
-          04 / Support
-        </span>
-        <h2 class="mt-4 text-4xl md:text-6xl tracking-tight text-white font-bold animate-fade-in">
-          CONTACT
-        </h2>
+        <span class="font-mono text-[10px] uppercase tracking-[0.3em] text-yellow-300"> 04 / Support </span>
+        <h2 class="mt-4 text-4xl md:text-6xl tracking-tight text-white font-bold animate-fade-in">CONTACT</h2>
         <p class="mt-4 font-mono text-sm text-gray-400 max-w-2xl ml-auto">
           Support, feedback, and community — everything you need to get the most out of 0xchat.
         </p>
@@ -41,7 +36,9 @@
               <Mail class="w-5 h-5 md:w-6 md:h-6 text-yellow-300" />
               <p class="font-mono text-sm md:text-lg text-gray-400 tracking-wider">CONTACT SUPPORT</p>
             </div>
-            <p class="font-[var(--font-orbitron)] text-3xl md:text-5xl text-yellow-300 transition-all duration-300 group-hover:text-white group-hover:scale-105">
+            <p
+              class="font-[var(--font-orbitron)] text-3xl md:text-5xl text-yellow-300 transition-all duration-300 group-hover:text-white group-hover:scale-105"
+            >
               support@0xchat.com
             </p>
             <p class="font-mono text-xs md:text-sm text-gray-500 mt-4 transition-all duration-300 group-hover:text-gray-300">
@@ -61,9 +58,7 @@
             <MessageCircle class="w-5 h-5 text-yellow-300" />
             <p class="font-[var(--font-orbitron)] text-lg text-white">Get Support</p>
           </div>
-          <p class="mt-3 font-mono text-xs text-gray-400 text-right">
-            // Share device, OS version, and screenshots if possible
-          </p>
+          <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Share device, OS version, and screenshots if possible</p>
         </a>
 
         <a
@@ -74,9 +69,7 @@
             <Sparkles class="w-5 h-5 text-yellow-300" />
             <p class="font-[var(--font-orbitron)] text-lg text-white">Send Feedback</p>
           </div>
-          <p class="mt-3 font-mono text-xs text-gray-400 text-right">
-            // Tell us what to improve — UX, features, or performance
-          </p>
+          <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Tell us what to improve — UX, features, or performance</p>
         </a>
 
         <a
@@ -90,9 +83,7 @@
             <Bug class="w-5 h-5 text-yellow-300" />
             <p class="font-[var(--font-orbitron)] text-lg text-white">Report a Bug</p>
           </div>
-          <p class="mt-3 font-mono text-xs text-gray-400 text-right">
-            // Prefer GitHub for reproducible crashes and logs
-          </p>
+          <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Prefer GitHub for reproducible crashes and logs</p>
         </a>
 
         <a
@@ -106,9 +97,7 @@
             <Github class="w-5 h-5 text-yellow-300" />
             <p class="font-[var(--font-orbitron)] text-lg text-white">Open Source</p>
           </div>
-          <p class="mt-3 font-mono text-xs text-gray-400 text-right">
-            // Releases, changelog, and contributions
-          </p>
+          <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Releases, changelog, and contributions</p>
         </a>
 
         <a
@@ -122,9 +111,7 @@
             <Search class="w-5 h-5 text-yellow-300" />
             <p class="font-[var(--font-orbitron)] text-lg text-white">What People Say</p>
           </div>
-          <p class="mt-3 font-mono text-xs text-gray-400 text-right">
-            // Browse #0xchat posts on Primal
-          </p>
+          <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Browse #0xchat posts on Primal</p>
         </a>
 
         <a
@@ -138,15 +125,12 @@
             <BadgeCheck class="w-5 h-5 text-yellow-300" />
             <p class="font-[var(--font-orbitron)] text-lg text-white">Official Profile</p>
           </div>
-          <p class="mt-3 font-mono text-xs text-gray-400 text-right">
-            // Follow 0xchat on Primal
-          </p>
+          <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Follow 0xchat on Primal</p>
         </a>
       </div>
 
       <!-- Stats or trust indicators -->
       <div class="mt-24 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 max-w-3xl ml-auto">
-
         <div class="group text-right">
           <div class="flex items-center justify-end gap-2 mb-2">
             <Shield class="w-5 h-5 text-yellow-300" />
@@ -176,22 +160,8 @@
 </template>
 
 <script setup>
-import {
-  BadgeCheck,
-  Bug,
-  GitBranch,
-  Github,
-  Mail,
-  MessageCircle,
-  Search,
-  Shield,
-  Smartphone,
-  Sparkles,
-  Zap,
-} from 'lucide-vue-next'
+import { BadgeCheck, Bug, GitBranch, Github, Mail, MessageCircle, Search, Shield, Smartphone, Sparkles, Zap } from "lucide-vue-next";
 </script>
-
-
 
 <style scoped>
 @keyframes fade-in {
