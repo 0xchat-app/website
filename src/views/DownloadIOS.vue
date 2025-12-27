@@ -26,7 +26,7 @@
             <div
               class="flex items-center justify-center w-20 h-20 bg-purple-900/30 rounded-2xl mb-6"
             >
-              <div class="text-4xl">📱</div>
+              <font-awesome-icon icon="fa-brands fa-apple" class="text-4xl text-white" />
             </div>
 
             <h2 class="text-2xl font-bold text-white mb-2">iOS</h2>
@@ -39,10 +39,15 @@
                 href="https://apps.apple.com/app/0xchat/id1637607169"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center justify-between w-full rounded-2xl px-6 py-4 bg-black/30 border border-gray-700 hover:border-purple-400/60 hover:bg-black/50 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-purple-500"
+                class="flex items-center justify-between w-full rounded-2xl px-6 py-4 bg-black/30 border border-gray-700 hover:border-purple-400/60 hover:bg-black/50 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-purple-500 group"
                 aria-label="Open 0xchat on the App Store"
               >
-                <span class="text-white font-semibold">App Store</span>
+                <span class="flex items-center gap-4 text-white font-semibold">
+                  <div class="flex items-center justify-center w-14 h-14 bg-purple-900/40 rounded-xl group-hover:bg-purple-800/50 transition-colors">
+                    <font-awesome-icon icon="fa-brands fa-app-store-ios" class="text-2xl text-purple-300" />
+                  </div>
+                  App Store
+                </span>
                 <span
                   class="flex items-center text-purple-400 font-semibold text-sm"
                 >
@@ -67,10 +72,15 @@
                 href="https://testflight.apple.com/join/AjdJFBmU"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center justify-between w-full rounded-2xl px-6 py-4 bg-black/30 border border-gray-700 hover:border-purple-400/60 hover:bg-black/50 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-purple-500"
+                class="flex items-center justify-between w-full rounded-2xl px-6 py-4 bg-black/30 border border-gray-700 hover:border-purple-400/60 hover:bg-black/50 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-purple-500 group"
                 aria-label="Join 0xchat TestFlight beta"
               >
-                <span class="text-white font-semibold">TestFlight Beta</span>
+                <span class="flex items-center gap-4 text-white font-semibold">
+                  <div class="flex items-center justify-center w-14 h-14 bg-blue-900/40 rounded-xl group-hover:bg-blue-800/50 transition-colors">
+                    <font-awesome-icon icon="fa-solid fa-paper-plane" class="text-2xl text-blue-300" />
+                  </div>
+                  TestFlight Beta
+                </span>
                 <span
                   class="flex items-center text-purple-400 font-semibold text-sm"
                 >

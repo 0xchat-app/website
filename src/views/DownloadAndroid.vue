@@ -26,7 +26,7 @@
             <div
               class="flex items-center justify-center w-20 h-20 bg-green-900/30 rounded-2xl mb-6"
             >
-              <div class="text-4xl">🤖</div>
+              <font-awesome-icon icon="fa-brands fa-android" class="text-4xl text-white" />
             </div>
 
             <h2 class="text-2xl font-bold text-white mb-2">Android</h2>
@@ -39,10 +39,15 @@
                 href="https://play.google.com/store/apps/details?id=com.oxchat.nostr"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center justify-between w-full rounded-2xl px-6 py-4 bg-black/30 border border-gray-700 hover:border-green-400/60 hover:bg-black/50 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-green-500"
+                class="flex items-center justify-between w-full rounded-2xl px-6 py-4 bg-black/30 border border-gray-700 hover:border-green-400/60 hover:bg-black/50 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-green-500 group"
                 aria-label="Open 0xchat on Google Play"
               >
-                <span class="text-white font-semibold">Google Play</span>
+                <span class="flex items-center gap-4 text-white font-semibold">
+                  <div class="flex items-center justify-center w-14 h-14 bg-green-900/40 rounded-xl group-hover:bg-green-800/50 transition-colors">
+                    <font-awesome-icon icon="fa-brands fa-google-play" class="text-2xl text-green-300" />
+                  </div>
+                  Google Play
+                </span>
                 <span
                   class="flex items-center text-green-400 font-semibold text-sm"
                 >
@@ -67,10 +72,15 @@
                 href="https://github.com/0xchat-app"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center justify-between w-full rounded-2xl px-6 py-4 bg-black/30 border border-gray-700 hover:border-green-400/60 hover:bg-black/50 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-green-500"
+                class="flex items-center justify-between w-full rounded-2xl px-6 py-4 bg-black/30 border border-gray-700 hover:border-green-400/60 hover:bg-black/50 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-green-500 group"
                 aria-label="Open 0xchat on GitHub"
               >
-                <span class="text-white font-semibold">GitHub Releases</span>
+                <span class="flex items-center gap-4 text-white font-semibold">
+                  <div class="flex items-center justify-center w-14 h-14 bg-gray-700/40 rounded-xl group-hover:bg-gray-600/50 transition-colors">
+                    <font-awesome-icon icon="fa-brands fa-github" class="text-2xl text-gray-300" />
+                  </div>
+                  GitHub Releases
+                </span>
                 <span
                   class="flex items-center text-green-400 font-semibold text-sm"
                 >

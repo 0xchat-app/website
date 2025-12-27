@@ -37,7 +37,7 @@
             <div
               class="flex items-center justify-center w-20 h-20 bg-purple-900/30 rounded-2xl mb-6 group-hover:bg-purple-800/40 group-hover:scale-110 transition-all duration-300"
             >
-              <div class="text-4xl">📱</div>
+              <font-awesome-icon icon="fa-brands fa-apple" class="text-4xl text-white" />
             </div>
 
             <!-- Content -->
@@ -121,7 +121,7 @@
             <div
               class="flex items-center justify-center w-20 h-20 bg-green-900/30 rounded-2xl mb-6 group-hover:bg-green-800/40 group-hover:scale-110 transition-all duration-300"
             >
-              <div class="text-4xl">🤖</div>
+              <font-awesome-icon icon="fa-brands fa-android" class="text-4xl text-white" />
             </div>
 
             <!-- Content -->
@@ -198,7 +198,7 @@
             <div
               class="flex items-center justify-center w-20 h-20 bg-gray-800 rounded-2xl mb-6"
             >
-              <div class="text-4xl">💻</div>
+              <font-awesome-icon icon="fa-brands fa-apple" class="text-4xl text-white" />
             </div>
 
             <!-- Content -->
@@ -228,7 +228,7 @@
             <div
               class="flex items-center justify-center w-20 h-20 bg-gray-800 rounded-2xl mb-6"
             >
-              <div class="text-4xl">🐧</div>
+              <font-awesome-icon icon="fa-brands fa-linux" class="text-4xl text-white" />
             </div>
 
             <!-- Content -->
@@ -258,7 +258,7 @@
             <div
               class="flex items-center justify-center w-20 h-20 bg-gray-800 rounded-2xl mb-6"
             >
-              <div class="text-4xl">🪟</div>
+              <font-awesome-icon icon="fa-brands fa-windows" class="text-4xl text-white" />
             </div>
 
             <!-- Content -->
