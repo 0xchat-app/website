@@ -23,6 +23,27 @@
       <div class="w-[1px] h-16 bg-gradient-to-b from-gray-500 to-transparent" />
     </div>
 
+    <!-- Breaking News Headlines (Right Side - Newspaper Style) -->
+    <div class="hidden lg:block absolute right-0 top-0 bottom-0 w-1/2 overflow-hidden pointer-events-none z-10" :class="{ 'news-hidden': isScrolled }">
+      <div class="relative h-full">
+        <div 
+          v-for="(headline, index) in newsHeadlines" 
+          :key="index" 
+          class="news-headline-item"
+          :style="{ 
+            animationDelay: `${index * 0.8}s`,
+            top: `${10 + (index * 11)}%`,
+            right: `${5 + (index % 3) * 8}%`
+          }"
+        >
+          <div class="news-stamp">BREAKING</div>
+          <div class="news-headline-source">{{ headline.source }}</div>
+          <div class="news-headline-text">{{ headline.text }}</div>
+          <div class="news-headline-date">{{ headline.date }}</div>
+        </div>
+      </div>
+    </div>
+
     <div class="flex flex-col items-stretch justify-center h-full relative z-20 max-w-5xl">
       <!-- CSS Logo -->
       <div class="flex items-center gap-6 mb-12 animate-fade-in-up">
@@ -123,6 +144,67 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const isScrolled = ref(false)
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 50
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+
+const newsHeadlines = ref([
+  {
+    source: "TechCrunch",
+    text: "WhatsApp shares user data with Facebook for targeted advertising",
+    date: "Dec 2024"
+  },
+  {
+    source: "The Guardian",
+    text: "Telegram CEO arrested, encryption backdoor suspected",
+    date: "Nov 2024"
+  },
+  {
+    source: "Reuters",
+    text: "Signal faces government pressure to implement backdoors",
+    date: "Oct 2024"
+  },
+  {
+    source: "Wired",
+    text: "Discord servers breached, millions of messages leaked",
+    date: "Sep 2024"
+  },
+  {
+    source: "NYT",
+    text: "FBI gains access to encrypted iMessage conversations",
+    date: "Aug 2024"
+  },
+  {
+    source: "BBC",
+    text: "Major messaging app hands over user data to authorities",
+    date: "Jul 2024"
+  },
+  {
+    source: "WSJ",
+    text: "Telegram criticized for sharing metadata with governments",
+    date: "Jun 2024"
+  },
+  {
+    source: "Forbes",
+    text: "WhatsApp encryption questioned after law enforcement access",
+    date: "May 2024"
+  }
+])
+</script>
 
 <style scoped>
 @keyframes pulse-slow {
@@ -372,6 +454,106 @@
   50% {
     opacity: 0.7;
     transform: scale(1.1);
+  }
+}
+
+/* News Hidden on Scroll */
+.news-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+/* Newspaper-Style Breaking News Headlines */
+.news-headline-item {
+  position: absolute;
+  width: 280px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-left: 3px solid rgba(239, 68, 68, 0.8);
+  padding: 16px;
+  transform: rotate(-2deg);
+  opacity: 0;
+  animation: pop-in-headline 0.6s ease-out forwards;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.news-headline-item:nth-child(odd) {
+  transform: rotate(1.5deg);
+}
+
+.news-headline-item:nth-child(even) {
+  transform: rotate(-1.5deg);
+}
+
+.news-stamp {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  background: #ef4444;
+  color: #000;
+  font-family: var(--font-orbitron), monospace;
+  font-size: 0.65rem;
+  font-weight: 900;
+  padding: 4px 12px;
+  letter-spacing: 0.15em;
+  transform: rotate(-8deg);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.6);
+  animation: stamp-pulse 2s ease-in-out infinite;
+}
+
+.news-headline-source {
+  font-family: var(--font-orbitron), monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ef4444;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+
+.news-headline-text {
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.3;
+  margin-bottom: 8px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.news-headline-date {
+  font-family: monospace;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+@keyframes pop-in-headline {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-8deg) translateY(20px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05) rotate(var(--rotation, -2deg)) translateY(-5px);
+  }
+  100% {
+    opacity: 0.85;
+    transform: scale(1) rotate(var(--rotation, -2deg)) translateY(0);
+  }
+}
+
+@keyframes stamp-pulse {
+  0%, 100% {
+    transform: rotate(-8deg) scale(1);
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.6);
+  }
+  50% {
+    transform: rotate(-8deg) scale(1.05);
+    box-shadow: 0 2px 12px rgba(239, 68, 68, 0.8);
   }
 }
 </style>

@@ -22,6 +22,27 @@
       </span>
     </div>
 
+    <!-- Open Source Disclaimer Card (Right Side) -->
+    <div class="hidden lg:block absolute right-8 top-1/2 -translate-y-1/2 w-80 z-10">
+      <div class="disclaimer-card">
+        <div class="disclaimer-icon">💻</div>
+        <div class="disclaimer-badge">OPEN SOURCE</div>
+        <h3 class="disclaimer-title">Built by Developers, For Everyone</h3>
+        <p class="disclaimer-text">
+          We are a team of talented developers passionate about privacy and decentralization. 
+        </p>
+        <p class="disclaimer-text">
+          This app is <span class="text-yellow-300 font-semibold">open source</span> and comes with 
+          <span class="text-yellow-300 font-semibold">no warranties</span>. While we strive to fix everything promptly, 
+          you may encounter bugs — which is normal for open source projects.
+        </p>
+        <div class="disclaimer-footer">
+          <font-awesome-icon icon="fa-brands fa-github" class="text-gray-400 text-sm" />
+          <span class="disclaimer-footer-text">Community Driven</span>
+        </div>
+      </div>
+    </div>
+
     <div
       class="flex flex-col items-stretch justify-center h-full relative z-10 max-w-6xl mr-auto"
     >
@@ -168,5 +189,93 @@ const faqs = [
 
 .animate-pulse-slower {
   animation: pulse-slower 12s ease-in-out infinite;
+}
+
+/* Open Source Disclaimer Card */
+.disclaimer-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(253, 224, 71, 0.2);
+  border-left: 4px solid rgba(253, 224, 71, 0.6);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  animation: slide-in-right 0.8s ease-out;
+}
+
+.disclaimer-icon {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 16px;
+  animation: float-icon 3s ease-in-out infinite;
+}
+
+.disclaimer-badge {
+  display: inline-block;
+  background: rgba(253, 224, 71, 0.15);
+  border: 1px solid rgba(253, 224, 71, 0.4);
+  color: #fde047;
+  font-family: var(--font-orbitron), monospace;
+  font-size: 0.65rem;
+  font-weight: 900;
+  padding: 4px 12px;
+  border-radius: 4px;
+  letter-spacing: 0.15em;
+  margin-bottom: 16px;
+}
+
+.disclaimer-title {
+  font-family: var(--font-orbitron), monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.disclaimer-text {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.disclaimer-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.disclaimer-footer-text {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float-icon {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 </style>
