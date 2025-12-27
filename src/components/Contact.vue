@@ -16,7 +16,7 @@
         </p>
         <div class="flex items-center justify-end my-8 gap-4">
           <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-l from-yellow-300 to-transparent" />
-          <span class="text-yellow-300 text-2xl">⚡</span>
+          <font-awesome-icon icon="fa-solid fa-bolt" class="text-yellow-300 text-2xl" />
         </div>
       </div>
 
@@ -33,7 +33,7 @@
             class="relative bg-black border border-yellow-300/40 rounded-lg px-8 md:px-12 py-6 md:py-8 transition-all duration-500 group-hover:border-yellow-300/80 group-hover:shadow-lg group-hover:shadow-yellow-300/20 w-fit ml-auto text-right"
           >
             <div class="flex items-center justify-end gap-3 mb-3">
-              <Mail class="w-5 h-5 md:w-6 md:h-6 text-yellow-300" />
+              <font-awesome-icon icon="fa-solid fa-envelope" class="w-5 h-5 md:w-6 md:h-6 text-yellow-300" />
               <p class="font-mono text-sm md:text-lg text-gray-400 tracking-wider">CONTACT SUPPORT</p>
             </div>
             <p
@@ -55,7 +55,7 @@
           class="group border border-yellow-300/30 rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-yellow-300/70 hover:shadow-lg hover:shadow-yellow-300/10"
         >
           <div class="flex items-center justify-end gap-3">
-            <MessageCircle class="w-5 h-5 text-yellow-300" />
+            <font-awesome-icon icon="fa-solid fa-comment" class="w-5 h-5 text-yellow-300" />
             <p class="font-[var(--font-orbitron)] text-lg text-white">Get Support</p>
           </div>
           <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Share device, OS version, and screenshots if possible</p>
@@ -66,7 +66,7 @@
           class="group border border-yellow-300/30 rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-yellow-300/70 hover:shadow-lg hover:shadow-yellow-300/10"
         >
           <div class="flex items-center justify-end gap-3">
-            <Sparkles class="w-5 h-5 text-yellow-300" />
+            <font-awesome-icon icon="fa-solid fa-wand-magic-sparkles" class="w-5 h-5 text-yellow-300" />
             <p class="font-[var(--font-orbitron)] text-lg text-white">Send Feedback</p>
           </div>
           <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Tell us what to improve — UX, features, or performance</p>
@@ -80,7 +80,7 @@
           aria-label="Open 0xchat on GitHub"
         >
           <div class="flex items-center justify-end gap-3">
-            <Bug class="w-5 h-5 text-yellow-300" />
+            <font-awesome-icon icon="fa-solid fa-bug" class="w-5 h-5 text-yellow-300" />
             <p class="font-[var(--font-orbitron)] text-lg text-white">Report a Bug</p>
           </div>
           <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Prefer GitHub for reproducible crashes and logs</p>
@@ -94,7 +94,7 @@
           aria-label="Open 0xchat on GitHub"
         >
           <div class="flex items-center justify-end gap-3">
-            <Github class="w-5 h-5 text-yellow-300" />
+            <font-awesome-icon icon="fa-brands fa-github" class="w-5 h-5 text-yellow-300" />
             <p class="font-[var(--font-orbitron)] text-lg text-white">Open Source</p>
           </div>
           <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Releases, changelog, and contributions</p>
@@ -108,7 +108,7 @@
           aria-label="See what people are saying about 0xchat on Primal"
         >
           <div class="flex items-center justify-end gap-3">
-            <Search class="w-5 h-5 text-yellow-300" />
+            <font-awesome-icon icon="fa-solid fa-magnifying-glass" class="w-5 h-5 text-yellow-300" />
             <p class="font-[var(--font-orbitron)] text-lg text-white">What People Say</p>
           </div>
           <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Browse #0xchat posts on Primal</p>
@@ -122,7 +122,7 @@
           aria-label="Open the official 0xchat profile on Primal"
         >
           <div class="flex items-center justify-end gap-3">
-            <BadgeCheck class="w-5 h-5 text-yellow-300" />
+            <font-awesome-icon icon="fa-solid fa-certificate" class="w-5 h-5 text-yellow-300" />
             <p class="font-[var(--font-orbitron)] text-lg text-white">Official Profile</p>
           </div>
           <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Follow 0xchat on Primal</p>
@@ -133,7 +133,7 @@
       <div class="mt-24 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 max-w-3xl ml-auto">
         <div class="group text-right">
           <div class="flex items-center justify-end gap-2 mb-2">
-            <Shield class="w-5 h-5 text-yellow-300" />
+            <font-awesome-icon icon="fa-solid fa-shield" class="w-5 h-5 text-yellow-300" />
             <p class="font-[var(--font-orbitron)] text-2xl md:text-3xl text-yellow-300 group-hover:scale-105 transition-transform duration-300">Privacy</p>
           </div>
           <p class="font-mono text-xs md:text-sm text-gray-400 uppercase tracking-wider">Default Secure</p>
@@ -141,7 +141,7 @@
 
         <div class="group text-right">
           <div class="flex items-center justify-end gap-2 mb-2">
-            <Zap class="w-5 h-5 text-yellow-300" />
+            <font-awesome-icon icon="fa-solid fa-bolt" class="w-5 h-5 text-yellow-300" />
             <p class="font-[var(--font-orbitron)] text-2xl md:text-3xl text-yellow-300 group-hover:scale-105 transition-transform duration-300">Fast</p>
           </div>
           <p class="font-mono text-xs md:text-sm text-gray-400 uppercase tracking-wider">Built for Chat</p>
@@ -149,7 +149,7 @@
 
         <div class="group text-right">
           <div class="flex items-center justify-end gap-2 mb-2">
-            <GitBranch class="w-5 h-5 text-yellow-300" />
+            <font-awesome-icon icon="fa-solid fa-code-branch" class="w-5 h-5 text-yellow-300" />
             <p class="font-[var(--font-orbitron)] text-2xl md:text-3xl text-yellow-300 group-hover:scale-105 transition-transform duration-300">Open</p>
           </div>
           <p class="font-mono text-xs md:text-sm text-gray-400 uppercase tracking-wider">Ship Together</p>
@@ -160,7 +160,6 @@
 </template>
 
 <script setup>
-import { BadgeCheck, Bug, GitBranch, Github, Mail, MessageCircle, Search, Shield, Smartphone, Sparkles, Zap } from "lucide-vue-next";
 </script>
 
 <style scoped>
