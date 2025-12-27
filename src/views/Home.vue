@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-black">
     <Hero />
-    <Services />
+    <Features />
     <SupportedNIPs />
     <Contact />
     <FAQ />
@@ -10,7 +10,7 @@
 
 <script setup>
 import { ref } from "vue";
-import Services from "@/components/Services.vue";
+import Features from "@/components/Features.vue";
 import Hero from "@/components/Hero.vue";
 import SupportedNIPs from "@/components/SupportedNIPs.vue";
 import Contact from "@/components/Contact.vue";

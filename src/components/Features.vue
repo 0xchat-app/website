@@ -25,7 +25,7 @@
         </p>
         <div class="flex items-center justify-end my-8 gap-4">
           <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-l from-yellow-300 to-transparent" />
-          <span class="text-yellow-300 text-2xl">⚡</span>
+          <font-awesome-icon icon="fa-solid fa-bolt" class="text-yellow-300 text-2xl" />
         </div>
       </div>
 
@@ -54,7 +54,7 @@
               {{ String(index + 1).padStart(2, "0") }}
             </span>
             <div class="text-5xl transition-transform duration-500" :class="activeService === index ? 'scale-110' : ''">
-              {{ service.icon }}
+              <font-awesome-icon :icon="service.icon" class="transition-colors duration-300" :class="activeService === index ? 'text-yellow-300' : 'text-gray-400'" />
             </div>
           </div>
 
@@ -117,56 +117,56 @@ const activeService = ref(null);
 
 const services = ref([
   {
-    icon: "✨",
+    icon: "fa-solid fa-wand-magic-sparkles",
     title: "Easy to use",
     description: "No Registration Required - Skip the usual hassle of providing a phone number, email, or name.",
     tech: ["No Setup", "Instant Access", "User Friendly"],
     features: ["Just dive right in", "Free from friction", "Seamless communication", "Zero barriers to entry"],
   },
   {
-    icon: "🔗",
+    icon: "fa-solid fa-link",
     title: "Built on the Nostr protocol",
     description: "You are in control of your data - decentralized and open communication.",
     tech: ["Decentralized", "Open Source", "Nostr"],
     features: ["Own your data", "No central server", "Open protocol", "Full control & freedom"],
   },
   {
-    icon: "🔒",
+    icon: "fa-solid fa-lock",
     title: "Encrypted Messages",
     description: "Our direct messages and friends list are secured with end-to-end encryption.",
     tech: ["E2E Encryption", "Privacy", "Security"],
     features: ["Private conversations", "Encrypted contacts list", "Secure friends management", "Only you and contacts see messages"],
   },
   {
-    icon: "👥",
+    icon: "fa-solid fa-users",
     title: "Private Group",
     description: "Create encrypted group chats with friends, family, or colleagues.",
     tech: ["Group Chat", "Encryption", "Privacy"],
     features: ["Encrypted group chats", "Member management", "Group privacy", "Invite-only control"],
   },
   {
-    icon: "📞",
+    icon: "fa-solid fa-phone",
     title: "Voice & Video Calls",
     description: "Experience simple and private face-to-face communication with high-definition calls.",
     tech: ["WebRTC", "HD Quality", "P2P"],
     features: ["High-definition audio", "Video calls", "Custom ICE service", "Enhanced privacy options"],
   },
   {
-    icon: "📡",
+    icon: "fa-solid fa-tower-broadcast",
     title: "Open Channels",
     description: "Explore the boundless realm of open channels and find communities.",
     tech: ["Public Channels", "Communities", "Discovery"],
     features: ["Public channel discovery", "Join seamlessly", "Community building", "Endless communication"],
   },
   {
-    icon: "⚡",
+    icon: "fa-solid fa-bolt",
     title: "Lightning Payments",
     description: "Integrated with the Cashu wallet, making transfers and payments effortless.",
     tech: ["Lightning Network", "Cashu", "Instant Payments"],
     features: ["Instant transactions", "Easy transfers", "Secure payments", "Integrated wallet"],
   },
   {
-    icon: "🏅",
+    icon: "fa-solid fa-medal",
     title: "Badge Collections",
     description: "Make your 0xchat profile uniquely yours with our Badge Collection feature.",
     tech: ["Profile Customization", "Achievements", "Identity"],

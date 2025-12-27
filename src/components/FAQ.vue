@@ -41,7 +41,7 @@
           Quick answers about setup, privacy, and getting help.
         </p>
         <div class="flex items-center my-8 gap-4">
-          <span class="text-yellow-300 text-2xl">⚡</span>
+          <font-awesome-icon icon="fa-solid fa-bolt" class="text-yellow-300 text-2xl" />
           <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-r from-yellow-300 to-transparent" />
         </div>
       </div>
@@ -63,7 +63,7 @@
             <div
               class="shrink-0 w-10 h-10 rounded-lg border border-gray-800/60 bg-black/40 flex items-center justify-center"
             >
-              <component :is="item.icon" class="w-5 h-5 text-yellow-300" />
+              <font-awesome-icon :icon="item.icon" class="w-5 h-5 text-yellow-300" />
             </div>
 
             <div>
@@ -78,7 +78,7 @@
 
           <div class="mt-4 h-[1px] bg-gradient-to-r from-yellow-300/20 to-transparent" />
           <div class="mt-3 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-gray-500">
-            <HelpCircle class="w-4 h-4 text-yellow-300/70" />
+            <font-awesome-icon icon="fa-solid fa-circle-question" class="w-4 h-4 text-yellow-300/70" />
             Quick tip
           </div>
           <p class="mt-2 font-mono text-xs text-gray-500">
@@ -91,54 +91,44 @@
 </template>
 
 <script setup>
-import {
-  Bug,
-  Download,
-  HelpCircle,
-  KeyRound,
-  Lock,
-  MessageCircle,
-  Smartphone,
-} from 'lucide-vue-next'
-
 const faqs = [
   {
-    icon: Smartphone,
+    icon: 'fa-solid fa-mobile-screen',
     question: 'Do I need a phone number or email to use 0xchat?',
     answer:
       'No. 0xchat is built on Nostr and uses keys for identity, so you can get started without traditional sign-ups.',
     tip: 'If you are new to Nostr, start by creating a new key and keep it safe.',
   },
   {
-    icon: KeyRound,
+    icon: 'fa-solid fa-key',
     question: 'What do I use to log in?',
     answer:
       'You log in with your Nostr key (for example, an nsec private key). Your key is your account, so protect it like a password.',
     tip: 'Never share your private key (nsec). Consider using a trusted signer if you have one.',
   },
   {
-    icon: Lock,
+    icon: 'fa-solid fa-lock',
     question: 'Are messages encrypted?',
     answer:
       '0xchat supports encrypted direct messages (including NIP-04 and NIP-44). Encryption applies to compatible message types and clients.',
     tip: 'If someone cannot decrypt your message, they may be using a client that does not support the same DM format.',
   },
   {
-    icon: Download,
+    icon: 'fa-solid fa-download',
     question: 'Where can I download the app?',
     answer:
       'Use the Download page to get the latest iOS or Android build from official stores, or follow our GitHub organization for updates.',
     tip: 'Always install from trusted sources and keep your app updated.',
   },
   {
-    icon: MessageCircle,
+    icon: 'fa-solid fa-comment',
     question: 'How do I get support?',
     answer:
       'Email support@0xchat.com with as much detail as possible (device, OS version, and steps to reproduce).',
     tip: 'Including screenshots and timestamps helps us diagnose faster.',
   },
   {
-    icon: Bug,
+    icon: 'fa-solid fa-bug',
     question: 'How do I report a bug or request a feature?',
     answer:
       'The best place is our GitHub organization. Open an issue with steps to reproduce and what you expected vs what happened.',

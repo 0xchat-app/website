@@ -24,7 +24,7 @@
           0xchat supports a comprehensive list of Nostr Improvement Proposals for a complete decentralized communication experience.
         </p>
         <div class="flex items-center my-8 gap-4">
-          <span class="text-yellow-300 text-2xl">⚡</span>
+          <font-awesome-icon icon="fa-solid fa-bolt" class="text-yellow-300 text-2xl" />
           <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-r from-yellow-300 to-transparent" />
         </div>
       </div>
@@ -51,7 +51,7 @@
               {{ nip.number }}
             </span>
             <div class="text-2xl transition-transform duration-500" :class="activeNIP === index ? 'scale-110' : ''">
-              {{ nip.icon }}
+              <font-awesome-icon :icon="nip.icon" class="transition-colors duration-300" :class="activeNIP === index ? 'text-yellow-300' : 'text-gray-400'" />
             </div>
           </div>
 
@@ -95,27 +95,27 @@ import { ref } from "vue";
 const activeNIP = ref(null);
 
 const nips = ref([
-  { number: "NIP-01", icon: "🔗", title: "Basic protocol flow description", description: "Core Nostr protocol specification" },
-  { number: "NIP-02", icon: "👥", title: "Contact List and Petnames", description: "Manage your contacts and aliases" },
-  { number: "NIP-04", icon: "🔐", title: "Encrypted Direct Message", description: "Encrypted private messages" },
-  { number: "NIP-05", icon: "📝", title: "DNS-based key mapping", description: "Human-readable identifiers" },
-  { number: "NIP-09", icon: "🗑️", title: "Event Deletion", description: "Delete events from relays" },
-  { number: "NIP-10", icon: "🏷️", title: '"e" & "p" tags in text events', description: "Event and person tagging" },
-  { number: "NIP-15", icon: "📬", title: "End of Stored Events Notice", description: "Relay storage management" },
-  { number: "NIP-17", icon: "👫", title: "Private group management", description: "Secure group chats", note: "Secure groups" },
-  { number: "NIP-19", icon: "🔑", title: "bech32-encoded entities", description: "Entity encoding standard" },
-  { number: "NIP-20", icon: "✅", title: "Command Results", description: "Command response handling" },
-  { number: "NIP-21", icon: "🔗", title: "nostr: URI scheme", description: "Universal resource identifiers" },
-  { number: "NIP-28", icon: "💬", title: "Public Chat", description: "Public channels and rooms" },
-  { number: "NIP-29", icon: "👫", title: "Relay groups", description: "Group relay management", note: "Open/closed group" },
-  { number: "NIP-33", icon: "📦", title: "Parameterized Replaceable Events", description: "Event replacement mechanism" },
-  { number: "NIP-44", icon: "💌", title: "Gift-wrapped DM encryption", description: "Enhanced message privacy" },
-  { number: "NIP-51", icon: "📋", title: "Lists", description: "List management and organization" },
-  { number: "NIP-57", icon: "⚡", title: "Lightning Zaps", description: "Lightning Network payments" },
-  { number: "NIP-58", icon: "🎖️", title: "Badges", description: "User badges and achievements" },
-  { number: "NIP-100", icon: "📹", title: "WebRTC Signaling", description: "Voice and video calls", note: "Audio/Video" },
-  { number: "NIP-101", icon: "🔀", title: "Alias Key Exchange", description: "Key exchange protocols" },
-  { number: "NIP-104", icon: "🔒", title: "MLS secret chat", description: "Advanced encryption", note: "Desktop beta" },
+  { number: "NIP-01", icon: "fa-solid fa-link", title: "Basic protocol flow description", description: "Core Nostr protocol specification" },
+  { number: "NIP-02", icon: "fa-solid fa-users", title: "Contact List and Petnames", description: "Manage your contacts and aliases" },
+  { number: "NIP-04", icon: "fa-solid fa-lock", title: "Encrypted Direct Message", description: "Encrypted private messages" },
+  { number: "NIP-05", icon: "fa-solid fa-file-signature", title: "DNS-based key mapping", description: "Human-readable identifiers" },
+  { number: "NIP-09", icon: "fa-solid fa-trash", title: "Event Deletion", description: "Delete events from relays" },
+  { number: "NIP-10", icon: "fa-solid fa-tag", title: '"e" & "p" tags in text events', description: "Event and person tagging" },
+  { number: "NIP-15", icon: "fa-solid fa-inbox", title: "End of Stored Events Notice", description: "Relay storage management" },
+  { number: "NIP-17", icon: "fa-solid fa-user-group", title: "Private group management", description: "Secure group chats", note: "Secure groups" },
+  { number: "NIP-19", icon: "fa-solid fa-key", title: "bech32-encoded entities", description: "Entity encoding standard" },
+  { number: "NIP-20", icon: "fa-solid fa-circle-check", title: "Command Results", description: "Command response handling" },
+  { number: "NIP-21", icon: "fa-solid fa-link", title: "nostr: URI scheme", description: "Universal resource identifiers" },
+  { number: "NIP-28", icon: "fa-solid fa-comment", title: "Public Chat", description: "Public channels and rooms" },
+  { number: "NIP-29", icon: "fa-solid fa-user-group", title: "Relay groups", description: "Group relay management", note: "Open/closed group" },
+  { number: "NIP-33", icon: "fa-solid fa-box", title: "Parameterized Replaceable Events", description: "Event replacement mechanism" },
+  { number: "NIP-44", icon: "fa-solid fa-heart", title: "Gift-wrapped DM encryption", description: "Enhanced message privacy" },
+  { number: "NIP-51", icon: "fa-solid fa-clipboard-list", title: "Lists", description: "List management and organization" },
+  { number: "NIP-57", icon: "fa-solid fa-bolt", title: "Lightning Zaps", description: "Lightning Network payments" },
+  { number: "NIP-58", icon: "fa-solid fa-medal", title: "Badges", description: "User badges and achievements" },
+  { number: "NIP-100", icon: "fa-solid fa-video", title: "WebRTC Signaling", description: "Voice and video calls", note: "Audio/Video" },
+  { number: "NIP-101", icon: "fa-solid fa-shuffle", title: "Alias Key Exchange", description: "Key exchange protocols" },
+  { number: "NIP-104", icon: "fa-solid fa-shield-halved", title: "MLS secret chat", description: "Advanced encryption", note: "Desktop beta" },
 ]);
 </script>
 
