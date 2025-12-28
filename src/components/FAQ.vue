@@ -16,7 +16,7 @@
     <!-- Side Label (Vertical) -->
     <div class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-10">
       <span
-        class="font-mono text-xs uppercase tracking-[0.3em] text-gray-400 -rotate-90 origin-left block whitespace-nowrap hover:text-yellow-300 transition-colors duration-300"
+        class="font-mono text-xs uppercase tracking-[0.3em] text-gray-400 -rotate-90 origin-left block whitespace-nowrap hover:text-[#818CF8] transition-colors duration-300"
       >
         FAQ
       </span>
@@ -32,8 +32,8 @@
           We are a team of talented developers passionate about privacy and decentralization. 
         </p>
         <p class="disclaimer-text">
-          This app is <span class="text-yellow-300 font-semibold">open source</span> and comes with 
-          <span class="text-yellow-300 font-semibold">no warranties</span>. While we strive to fix everything promptly, 
+          This app is <span class="text-[#818CF8] font-semibold">open source</span> and comes with 
+          <span class="text-[#818CF8] font-semibold">no warranties</span>. While we strive to fix everything promptly, 
           you may encounter bugs — which is normal for open source projects.
         </p>
         <div class="disclaimer-footer">
@@ -49,7 +49,7 @@
       <!-- Section Header (Left aligned) -->
       <div class="mb-12">
         <span
-          class="font-mono text-[10px] uppercase tracking-[0.3em] text-yellow-300"
+          class="font-mono text-[10px] uppercase tracking-[0.3em] text-[#818CF8]"
         >
           04 / Help Center
         </span>
@@ -62,8 +62,8 @@
           Quick answers about setup, privacy, and getting help.
         </p>
         <div class="flex items-center my-8 gap-4">
-          <font-awesome-icon icon="fa-solid fa-bolt" class="text-yellow-300 text-2xl" />
-          <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-r from-yellow-300 to-transparent" />
+          <font-awesome-icon icon="fa-solid fa-bolt" class="text-[#818CF8] text-2xl" />
+          <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-r from-[#818CF8] to-transparent" />
         </div>
       </div>
 
@@ -72,19 +72,19 @@
         <div
           v-for="(item, index) in faqs"
           :key="index"
-          class="group relative border border-gray-800/40 p-6 transition-all duration-500 hover:border-yellow-300/60"
+          class="group relative border border-gray-800/40 p-6 transition-all duration-500 hover:border-[#818CF8]/60"
         >
           <!-- Corner bracket -->
           <div class="absolute top-0 left-0 w-14 h-14 opacity-0 group-hover:opacity-100 transition-all duration-500">
-            <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-yellow-300 to-transparent" />
-            <div class="absolute top-0 left-0 w-[2px] h-full bg-gradient-to-b from-yellow-300 to-transparent" />
+            <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#818CF8] to-transparent" />
+            <div class="absolute top-0 left-0 w-[2px] h-full bg-gradient-to-b from-[#818CF8] to-transparent" />
           </div>
 
           <div class="flex items-start gap-4">
             <div
               class="shrink-0 w-10 h-10 rounded-lg border border-gray-800/60 bg-black/40 flex items-center justify-center"
             >
-              <font-awesome-icon :icon="item.icon" class="w-5 h-5 text-yellow-300" />
+              <font-awesome-icon :icon="item.icon" class="w-5 h-5 text-[#818CF8]" />
             </div>
 
             <div>
@@ -97,9 +97,9 @@
             </div>
           </div>
 
-          <div class="mt-4 h-[1px] bg-gradient-to-r from-yellow-300/20 to-transparent" />
+          <div class="mt-4 h-[1px] bg-gradient-to-r from-[#818CF8]/20 to-transparent" />
           <div class="mt-3 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-gray-500">
-            <font-awesome-icon icon="fa-solid fa-circle-question" class="w-4 h-4 text-yellow-300/70" />
+            <font-awesome-icon icon="fa-solid fa-circle-question" class="w-4 h-4 text-[#818CF8]/70" />
             Quick tip
           </div>
           <p class="mt-2 font-mono text-xs text-gray-500">
@@ -196,8 +196,8 @@ const faqs = [
   position: relative;
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(253, 224, 71, 0.2);
-  border-left: 4px solid rgba(253, 224, 71, 0.6);
+  border: 1px solid rgba(129, 140, 248, 0.2);
+  border-left: 4px solid rgba(129, 140, 248, 0.6);
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
@@ -213,9 +213,9 @@ const faqs = [
 
 .disclaimer-badge {
   display: inline-block;
-  background: rgba(253, 224, 71, 0.15);
-  border: 1px solid rgba(253, 224, 71, 0.4);
-  color: #fde047;
+  background: rgba(129, 140, 248, 0.15);
+  border: 1px solid rgba(129, 140, 248, 0.4);
+  color: #818CF8;
   font-family: var(--font-orbitron), monospace;
   font-size: 0.65rem;
   font-weight: 900;

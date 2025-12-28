@@ -9,7 +9,7 @@
     <!-- Side Label (Vertical) -->
     <div class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-10">
       <span
-        class="font-mono text-xs uppercase tracking-[0.3em] text-gray-400 rotate-90 origin-right block whitespace-nowrap hover:text-yellow-300 transition-colors duration-300"
+        class="font-mono text-xs uppercase tracking-[0.3em] text-gray-400 rotate-90 origin-right block whitespace-nowrap hover:text-[#818CF8] transition-colors duration-300"
       >
         SERVICES
       </span>
@@ -18,14 +18,14 @@
     <div class="flex flex-col items-stretch justify-center h-full relative z-10 max-w-6xl ml-auto">
       <!-- Section Header -->
       <div class="mb-12 text-right">
-        <span class="font-mono text-[10px] uppercase tracking-[0.3em] text-yellow-300"> 02 / What We Offer </span>
+        <span class="font-mono text-[10px] uppercase tracking-[0.3em] text-[#818CF8]"> 02 / What We Offer </span>
         <h2 class="mt-4 text-4xl md:text-6xl tracking-tight text-white font-bold"> FEATURES</h2>
         <p class="mt-4 font-mono text-sm text-gray-400 max-w-2xl ml-auto">
           Everything you need to launch and grow 0xchat — a fast, private messaging app built for real-world use.
         </p>
         <div class="flex items-center justify-end my-8 gap-4">
-          <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-l from-yellow-300 to-transparent" />
-          <font-awesome-icon icon="fa-solid fa-bolt" class="text-yellow-300 text-2xl" />
+          <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-l from-[#818CF8] to-transparent" />
+          <font-awesome-icon icon="fa-solid fa-bolt" class="text-[#818CF8] text-2xl" />
         </div>
       </div>
 
@@ -36,25 +36,25 @@
           :key="index"
           @mouseenter="activeService = index"
           @mouseleave="activeService = null"
-          class="group relative border border-gray-800/40 p-8 transition-all duration-500 cursor-pointer hover:border-yellow-300/60 text-right"
-          :class="activeService === index ? 'bg-yellow-300/5' : ''"
+          class="group relative border border-gray-800/40 p-8 transition-all duration-500 cursor-pointer hover:border-[#818CF8]/60 text-right"
+          :class="activeService === index ? 'bg-[#818CF8]/5' : ''"
         >
           <!-- Animated corner bracket -->
           <div class="absolute top-0 right-0 w-16 h-16 transition-all duration-500" :class="activeService === index ? 'opacity-100' : 'opacity-0'">
-            <div class="absolute top-0 right-0 w-full h-[2px] bg-gradient-to-l from-yellow-300 to-transparent" />
-            <div class="absolute top-0 right-0 w-[2px] h-full bg-gradient-to-b from-yellow-300 to-transparent" />
+            <div class="absolute top-0 right-0 w-full h-[2px] bg-gradient-to-l from-[#818CF8] to-transparent" />
+            <div class="absolute top-0 right-0 w-[2px] h-full bg-gradient-to-b from-[#818CF8] to-transparent" />
           </div>
 
           <!-- Service number -->
           <div class="flex items-start justify-between mb-6">
             <span
               class="font-mono text-6xl text-gray-800/40 font-bold transition-all duration-300"
-              :class="activeService === index ? 'text-yellow-300/20' : ''"
+              :class="activeService === index ? 'text-[#818CF8]/20' : ''"
             >
               {{ String(index + 1).padStart(2, "0") }}
             </span>
             <div class="text-5xl transition-transform duration-500" :class="activeService === index ? 'scale-110' : ''">
-              <font-awesome-icon :icon="service.icon" class="transition-colors duration-300" :class="activeService === index ? 'text-yellow-300' : 'text-gray-400'" />
+              <font-awesome-icon :icon="service.icon" class="transition-colors duration-300" :class="activeService === index ? 'text-[#818CF8]' : 'text-gray-400'" />
             </div>
           </div>
 
@@ -62,7 +62,7 @@
           <div class="relative z-10">
             <h3
               class="text-2xl md:text-3xl tracking-tight mb-3 transition-colors duration-300 font-bold"
-              :class="activeService === index ? 'text-yellow-300' : 'text-white'"
+              :class="activeService === index ? 'text-[#818CF8]' : 'text-white'"
             >
               {{ service.title }}
             </h3>
@@ -77,7 +77,7 @@
                 v-for="(tech, techIndex) in service.tech"
                 :key="techIndex"
                 class="font-mono text-[9px] px-2 py-1 border border-gray-700 rounded uppercase tracking-wider transition-all duration-300"
-                :class="activeService === index ? 'border-yellow-300/40 text-yellow-300' : 'text-gray-500'"
+                :class="activeService === index ? 'border-[#818CF8]/40 text-[#818CF8]' : 'text-gray-500'"
               >
                 {{ tech }}
               </span>
@@ -85,14 +85,14 @@
 
             <!-- Features list -->
             <div class="space-y-2 transition-all duration-500 overflow-hidden" :class="activeService === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'">
-              <div class="h-[1px] bg-gradient-to-l from-yellow-300/40 to-transparent mb-3" />
+              <div class="h-[1px] bg-gradient-to-l from-[#818CF8]/40 to-transparent mb-3" />
               <div
                 v-for="(feature, featureIndex) in service.features"
                 :key="featureIndex"
                 class="flex items-center justify-end gap-2 font-mono text-xs text-gray-400"
               >
                 <span>{{ feature }}</span>
-                <span class="text-yellow-300">→</span>
+                <span class="text-[#818CF8]">→</span>
               </div>
             </div>
           </div>
@@ -102,7 +102,7 @@
             class="absolute left-4 top-1/2 -translate-y-1/2 transition-all duration-300"
             :class="activeService === index ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'"
           >
-            <span class="text-yellow-300 text-xl">→</span>
+            <span class="text-[#818CF8] text-xl">→</span>
           </div>
         </div>
       </div>

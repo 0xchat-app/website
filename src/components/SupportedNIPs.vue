@@ -9,7 +9,7 @@
     <!-- Side Label (Vertical) -->
     <div class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-10">
       <span
-        class="font-mono text-xs uppercase tracking-[0.3em] text-gray-400 -rotate-90 origin-left block whitespace-nowrap hover:text-yellow-300 transition-colors duration-300"
+        class="font-mono text-xs uppercase tracking-[0.3em] text-gray-400 -rotate-90 origin-left block whitespace-nowrap hover:text-[#818CF8] transition-colors duration-300"
       >
         NIPs
       </span>
@@ -18,14 +18,14 @@
     <div class="flex flex-col items-stretch justify-center h-full relative z-10 max-w-6xl mr-auto">
       <!-- Section Header -->
       <div class="mb-12">
-        <span class="font-mono text-[10px] uppercase tracking-[0.3em] text-yellow-300"> 03 / Network Protocols </span>
+        <span class="font-mono text-[10px] uppercase tracking-[0.3em] text-[#818CF8]"> 03 / Network Protocols </span>
         <h2 class="mt-4 text-4xl md:text-6xl tracking-tight text-white font-bold">SUPPORTED NIPS</h2>
         <p class="mt-4 font-mono text-sm text-gray-400 max-w-2xl">
           0xchat supports a comprehensive list of Nostr Improvement Proposals for a complete decentralized communication experience.
         </p>
         <div class="flex items-center my-8 gap-4">
-          <font-awesome-icon icon="fa-solid fa-bolt" class="text-yellow-300 text-2xl" />
-          <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-r from-yellow-300 to-transparent" />
+          <font-awesome-icon icon="fa-solid fa-bolt" class="text-[#818CF8] text-2xl" />
+          <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-r from-[#818CF8] to-transparent" />
         </div>
       </div>
 
@@ -36,29 +36,29 @@
           :key="index"
           @mouseenter="activeNIP = index"
           @mouseleave="activeNIP = null"
-          class="group relative border border-gray-800/40 p-6 transition-all duration-500 cursor-pointer hover:border-yellow-300/60"
-          :class="activeNIP === index ? 'bg-yellow-300/5' : ''"
+          class="group relative border border-gray-800/40 p-6 transition-all duration-500 cursor-pointer hover:border-[#818CF8]/60"
+          :class="activeNIP === index ? 'bg-[#818CF8]/5' : ''"
         >
           <!-- Animated corner bracket -->
           <div class="absolute top-0 left-0 w-12 h-12 transition-all duration-500" :class="activeNIP === index ? 'opacity-100' : 'opacity-0'">
-            <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-yellow-300 to-transparent" />
-            <div class="absolute top-0 left-0 w-[2px] h-full bg-gradient-to-b from-yellow-300 to-transparent" />
+            <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#818CF8] to-transparent" />
+            <div class="absolute top-0 left-0 w-[2px] h-full bg-gradient-to-b from-[#818CF8] to-transparent" />
           </div>
 
           <!-- NIP Number and Icon -->
           <div class="flex items-center justify-between mb-4">
-            <span class="font-mono text-2xl font-bold transition-colors duration-300" :class="activeNIP === index ? 'text-yellow-300' : 'text-gray-600'">
+            <span class="font-mono text-2xl font-bold transition-colors duration-300" :class="activeNIP === index ? 'text-[#818CF8]' : 'text-gray-600'">
               {{ nip.number }}
             </span>
             <div class="text-2xl transition-transform duration-500" :class="activeNIP === index ? 'scale-110' : ''">
-              <font-awesome-icon :icon="nip.icon" class="transition-colors duration-300" :class="activeNIP === index ? 'text-yellow-300' : 'text-gray-400'" />
+              <font-awesome-icon :icon="nip.icon" class="transition-colors duration-300" :class="activeNIP === index ? 'text-[#818CF8]' : 'text-gray-400'" />
             </div>
           </div>
 
           <!-- NIP Title -->
           <h3
             class="font-semibold text-base tracking-tight mb-2 transition-colors duration-300"
-            :class="activeNIP === index ? 'text-yellow-300' : 'text-white'"
+            :class="activeNIP === index ? 'text-[#818CF8]' : 'text-white'"
           >
             {{ nip.title }}
           </h3>
@@ -70,8 +70,8 @@
 
           <!-- Additional note (if exists) -->
           <div class="mt-3 transition-all duration-500 overflow-hidden" :class="activeNIP === index ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'">
-            <div class="h-[1px] bg-gradient-to-r from-yellow-300/40 to-transparent mb-2" />
-            <span class="font-mono text-[10px] text-yellow-300/80 uppercase tracking-wider">
+            <div class="h-[1px] bg-gradient-to-r from-[#818CF8]/40 to-transparent mb-2" />
+            <span class="font-mono text-[10px] text-[#818CF8]/80 uppercase tracking-wider">
               {{ nip.note }}
             </span>
           </div>
@@ -81,7 +81,7 @@
             class="absolute right-4 top-1/2 -translate-y-1/2 transition-all duration-300"
             :class="activeNIP === index ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'"
           >
-            <span class="text-yellow-300">→</span>
+            <span class="text-[#818CF8]">→</span>
           </div>
         </div>
       </div>

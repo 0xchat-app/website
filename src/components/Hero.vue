@@ -4,14 +4,14 @@
 
     <!-- Animated gradient orbs -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-yellow-300/10 rounded-full blur-3xl animate-pulse-slow" />
+      <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#818CF8]/10 rounded-full blur-3xl animate-pulse-slow" />
       <div class="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] bg-orange-400/10 rounded-full blur-3xl animate-pulse-slower" />
     </div>
 
     <!-- Side Label (Vertical) -->
     <div class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-10 uppercase">
       <span
-        class="font-mono text-xs uppercase tracking-[0.3em] text-gray-400 -rotate-90 origin-left block whitespace-nowrap hover:text-yellow-300 transition-colors duration-300"
+        class="font-mono text-xs uppercase tracking-[0.3em] text-gray-400 -rotate-90 origin-left block whitespace-nowrap hover:text-[#818CF8] transition-colors duration-300"
       >
         0xchat
       </span>
@@ -72,13 +72,13 @@
         <p class="group hover:text-gray-300 transition-all duration-300 hover:translate-x-2">
           <span class="inline-block emoji-hover mr-2">⚡</span>
           0xchat is a
-          <span class="font-semibold text-white group-hover:text-yellow-300 transition-colors duration-300">
+          <span class="font-semibold text-white group-hover:text-[#818CF8] transition-colors duration-300">
             <span class="inline-block emoji-hover">🔒</span> secure, <span class="inline-block emoji-hover">🔓</span> decentralized,
             <span class="inline-block emoji-hover">⧳</span> Nostr-powered</span
           >
           chat application.
           <span class="inline-block emoji-hover mx-1">💬</span>
-          Your data, <span class="text-yellow-300 font-semibold">your control</span>
+          Your data, <span class="text-[#818CF8] font-semibold">your control</span>
           <span class="inline-block emoji-hover ml-1">🛡️</span>
           — end-to-end encryption for <span class="font-semibold">all conversations</span>
           <span class="inline-block emoji-hover ml-1">🔐</span>
@@ -88,10 +88,10 @@
           <span class="inline-block emoji-hover mr-2">✨</span>
           No registration. No phone number. No corporate surveillance.
           <span class="inline-block emoji-hover mx-1">👤</span>
-          Just <span class="text-yellow-300 font-semibold">private key</span> login and
+          Just <span class="text-[#818CF8] font-semibold">private key</span> login and
           <span class="relative inline-block text-white font-semibold group-hover:scale-110 transition-transform duration-300">
             true privacy
-            <span class="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-yellow-300 via-cyan-400 to-yellow-300 animate-shimmer" />
+            <span class="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-[#818CF8] via-cyan-400 to-[#818CF8] animate-shimmer" />
           </span>
           .
           <span class="inline-block emoji-hover ml-1">🚀</span>
@@ -102,7 +102,7 @@
       <div class="mt-12 flex flex-col sm:flex-row gap-4 items-start">
         <router-link
           to="/download"
-          class="group relative inline-flex items-center justify-center gap-3 bg-yellow-300 text-black font-bold text-lg px-10 py-5 overflow-hidden transition-all duration-500 hover:bg-yellow-400 hover:shadow-2xl hover:shadow-yellow-300/60 hover:scale-110 hover:-translate-y-1 animate-pulse-subtle"
+          class="group relative inline-flex items-center justify-center gap-3 bg-[#818CF8] text-black font-bold text-lg px-10 py-5 overflow-hidden transition-all duration-500 hover:bg-[#818CF8] hover:shadow-2xl hover:shadow-[#818CF8]/60 hover:scale-110 hover:-translate-y-1 animate-pulse-subtle"
         >
           <font-awesome-icon icon="fa-solid fa-download" class="w-6 h-6 relative z-10 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1" />
           <span class="relative z-10 tracking-wider">GET APP</span>
@@ -113,7 +113,7 @@
           <span class="absolute bottom-0 right-0 w-2 h-2 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
           <!-- Sliding background effect -->
           <span
-            class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-500 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"
+            class="absolute inset-0 bg-gradient-to-r from-[#818CF8] to-[#818CF8] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"
           ></span>
         </router-link>
 
@@ -121,24 +121,24 @@
           href="https://github.com/0xchat-app"
           target="_blank"
           rel="noopener noreferrer"
-          class="group relative inline-flex items-center justify-center gap-3 bg-transparent border-2 border-gray-700 text-white font-bold text-lg px-10 py-5 overflow-hidden transition-all duration-500 hover:border-yellow-300 hover:shadow-2xl hover:shadow-yellow-300/40 hover:scale-110 hover:-translate-y-1"
+          class="group relative inline-flex items-center justify-center gap-3 bg-transparent border-2 border-gray-700 text-white font-bold text-lg px-10 py-5 overflow-hidden transition-all duration-500 hover:border-[#818CF8] hover:shadow-2xl hover:shadow-[#818CF8]/40 hover:scale-110 hover:-translate-y-1"
         >
           <!-- Animated border effect -->
-          <span class="absolute inset-0 border-2 border-yellow-300 scale-0 group-hover:scale-100 transition-transform duration-500 origin-center"></span>
+          <span class="absolute inset-0 border-2 border-[#818CF8] scale-0 group-hover:scale-100 transition-transform duration-500 origin-center"></span>
 
           <!-- Sweep effect -->
           <span
-            class="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-300/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"
+            class="absolute inset-0 bg-gradient-to-r from-transparent via-[#818CF8]/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"
           ></span>
 
           <font-awesome-icon icon="fa-brands fa-github" class="w-6 h-6 relative z-10 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
           <span class="relative z-10 tracking-wider">GITHUB</span>
 
           <!-- Corner accents -->
-          <span class="absolute top-0 left-0 w-0 h-0.5 bg-yellow-300 group-hover:w-8 transition-all duration-300"></span>
-          <span class="absolute top-0 left-0 w-0.5 h-0 bg-yellow-300 group-hover:h-8 transition-all duration-300 delay-75"></span>
-          <span class="absolute bottom-0 right-0 w-0 h-0.5 bg-yellow-300 group-hover:w-8 transition-all duration-300"></span>
-          <span class="absolute bottom-0 right-0 w-0.5 h-0 bg-yellow-300 group-hover:h-8 transition-all duration-300 delay-75"></span>
+          <span class="absolute top-0 left-0 w-0 h-0.5 bg-[#818CF8] group-hover:w-8 transition-all duration-300"></span>
+          <span class="absolute top-0 left-0 w-0.5 h-0 bg-[#818CF8] group-hover:h-8 transition-all duration-300 delay-75"></span>
+          <span class="absolute bottom-0 right-0 w-0 h-0.5 bg-[#818CF8] group-hover:w-8 transition-all duration-300"></span>
+          <span class="absolute bottom-0 right-0 w-0.5 h-0 bg-[#818CF8] group-hover:h-8 transition-all duration-300 delay-75"></span>
         </a>
       </div>
     </div>
@@ -234,10 +234,10 @@ const newsHeadlines = ref([
 @keyframes pulse-subtle {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(253, 224, 71, 0.4);
+    box-shadow: 0 0 20px rgba(129, 140, 248, 0.4);
   }
   50% {
-    box-shadow: 0 0 40px rgba(253, 224, 71, 0.6);
+    box-shadow: 0 0 40px rgba(129, 140, 248, 0.6);
   }
 }
 
@@ -368,7 +368,7 @@ const newsHeadlines = ref([
 
 .emoji-hover:hover {
   transform: scale(1.3) rotate(10deg);
-  filter: drop-shadow(0 0 8px rgba(253, 224, 71, 0.5));
+  filter: drop-shadow(0 0 8px rgba(129, 140, 248, 0.5));
   animation: emoji-bounce 0.5s ease;
 }
 
@@ -387,18 +387,18 @@ const newsHeadlines = ref([
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #fde047 0%, #facc15 100%);
+  background: linear-gradient(135deg, #818CF8 0%, #818CF8 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 30px rgba(253, 224, 71, 0.5), 0 0 60px rgba(253, 224, 71, 0.3);
+  box-shadow: 0 0 30px rgba(129, 140, 248, 0.5), 0 0 60px rgba(129, 140, 248, 0.3);
   transition: all 0.3s ease;
   animation: logo-float 3s ease-in-out infinite;
 }
 
 .logo-badge:hover {
   transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 0 40px rgba(253, 224, 71, 0.7), 0 0 80px rgba(253, 224, 71, 0.4);
+  box-shadow: 0 0 40px rgba(129, 140, 248, 0.7), 0 0 80px rgba(129, 140, 248, 0.4);
 }
 
 .logo-badge-text {
@@ -418,8 +418,8 @@ const newsHeadlines = ref([
 }
 
 .logo-ox {
-  color: #fde047;
-  text-shadow: 0 0 30px rgba(253, 224, 71, 0.6);
+  color: #818CF8;
+  text-shadow: 0 0 30px rgba(129, 140, 248, 0.6);
 }
 
 .logo-chat {
@@ -434,7 +434,7 @@ const newsHeadlines = ref([
 .logo-lightning {
   font-size: 3.5rem;
   animation: lightning-pulse 2s ease-in-out infinite;
-  filter: drop-shadow(0 0 15px rgba(253, 224, 71, 0.9));
+  filter: drop-shadow(0 0 15px rgba(129, 140, 248, 0.9));
 }
 
 @keyframes logo-float {
