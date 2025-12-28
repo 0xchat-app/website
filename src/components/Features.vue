@@ -172,6 +172,35 @@ const services = ref([
     tech: ["Profile Customization", "Achievements", "Identity"],
     features: ["Collect badges", "Display achievements", "Unique profile", "Personal identity"],
   },
+  // New feature additions
+  {
+    icon: "fa-solid fa-network-wired",
+    title: "Relay Groups",
+    description: "Coordinate large group messaging across relay groups for scale.",
+    tech: ["Relay Groups", "Scaling", "NIP-29"],
+    features: ["Large group support", "Relay coordination", "Better scalability", "Configurable policies"],
+  },
+  {
+    icon: "fa-solid fa-newspaper",
+    title: "Nostr Posts",
+    description: "Create and interact with Nostr notes and long-form content.",
+    tech: ["Posts", "Notes", "Nostr"],
+    features: ["Publish notes", "Read timelines", "Reply & react", "Share content"],
+  },
+  {
+    icon: "fa-solid fa-puzzle-piece",
+    title: "Napps (Embedded Apps)",
+    description: "Run embedded Nostr apps inside the client with safe permissions.",
+    tech: ["Napps", "Extensions", "Embedded"],
+    features: ["Launch in-app apps", "Secure permissions", "Seamless integration", "Discover tools"],
+  },
+  {
+    icon: "fa-solid fa-user-secret",
+    title: "Embedded Tor",
+    description: "Route traffic via Tor to reduce metadata and enhance privacy.",
+    tech: ["Tor", "Privacy", "Anonymity"],
+    features: ["Tor routing", "Less metadata", "Optional per feature", "Censorship resistance"],
+  },
 ]);
 </script>
 

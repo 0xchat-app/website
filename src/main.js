@@ -7,10 +7,10 @@ import './main.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faApple, faAndroid, faLinux, faWindows, faAppStoreIos, faGooglePlay, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faPaperPlane, faDownload, faWandMagicSparkles, faLink, faLock, faUsers, faPhone, faTowerBroadcast, faBolt, faMedal, faKey, faEnvelope, faFileSignature, faTrash, faTag, faInbox, faUserGroup, faCircleCheck, faComment, faBox, faHeart, faClipboardList, faVideo, faShuffle, faShieldHalved, faMobileScreen, faCircleQuestion, faBug, faShield, faCodeBranch, faMagnifyingGlass, faCertificate } from '@fortawesome/free-solid-svg-icons'
+import { faPaperPlane, faDownload, faWandMagicSparkles, faLink, faLock, faUsers, faPhone, faTowerBroadcast, faBolt, faMedal, faKey, faEnvelope, faFileSignature, faTrash, faTag, faInbox, faUserGroup, faCircleCheck, faComment, faBox, faHeart, faClipboardList, faVideo, faShuffle, faShieldHalved, faMobileScreen, faCircleQuestion, faBug, faShield, faCodeBranch, faMagnifyingGlass, faCertificate, faNetworkWired, faNewspaper, faPuzzlePiece, faUserSecret } from '@fortawesome/free-solid-svg-icons'
 
 // Add icons to library
-library.add(faApple, faAndroid, faLinux, faWindows, faAppStoreIos, faPaperPlane, faGooglePlay, faGithub, faDownload, faWandMagicSparkles, faLink, faLock, faUsers, faPhone, faTowerBroadcast, faBolt, faMedal, faKey, faEnvelope, faFileSignature, faTrash, faTag, faInbox, faUserGroup, faCircleCheck, faComment, faBox, faHeart, faClipboardList, faVideo, faShuffle, faShieldHalved, faMobileScreen, faCircleQuestion, faBug, faShield, faCodeBranch, faMagnifyingGlass, faCertificate)
+library.add(faApple, faAndroid, faLinux, faWindows, faAppStoreIos, faPaperPlane, faGooglePlay, faGithub, faDownload, faWandMagicSparkles, faLink, faLock, faUsers, faPhone, faTowerBroadcast, faBolt, faMedal, faKey, faEnvelope, faFileSignature, faTrash, faTag, faInbox, faUserGroup, faCircleCheck, faComment, faBox, faHeart, faClipboardList, faVideo, faShuffle, faShieldHalved, faMobileScreen, faCircleQuestion, faBug, faShield, faCodeBranch, faMagnifyingGlass, faCertificate, faNetworkWired, faNewspaper, faPuzzlePiece, faUserSecret)
 
 const app = createApp(App)
 
