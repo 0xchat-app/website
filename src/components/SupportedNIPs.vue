@@ -1,5 +1,9 @@
 <template>
-  <section id="supported-nips" class="relative min-h-screen flex items-center pl-6 md:pl-12 pr-6 md:pr-28 overflow-hidden bg-black">
+  <section 
+    ref="sectionRef"
+    id="supported-nips" 
+    class="relative min-h-screen flex items-center pl-6 md:pl-12 pr-6 md:pr-28 overflow-hidden bg-black"
+  >
     <!-- Animated background elements -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <div class="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-3xl animate-pulse-slow" />
@@ -15,22 +19,25 @@
       </span>
     </div>
 
-    <div class="flex flex-col items-stretch justify-center h-full relative z-10 max-w-6xl mr-auto">
-      <!-- Section Header -->
-      <div class="mb-12">
-        <span class="font-mono text-[10px] uppercase tracking-[0.3em] text-[#818CF8]"> 03 / Network Protocols </span>
-        <h2 class="mt-4 text-4xl md:text-6xl tracking-tight text-white font-bold">SUPPORTED NIPS</h2>
-        <p class="mt-4 font-mono text-sm text-gray-400 max-w-2xl">
-          0xchat supports a comprehensive list of Nostr Improvement Proposals for a complete decentralized communication experience.
-        </p>
-        <div class="flex items-center my-8 gap-4">
-          <font-awesome-icon icon="fa-solid fa-bolt" class="text-[#818CF8] text-2xl" />
-          <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-r from-[#818CF8] to-transparent" />
+    <!-- Main Content Container with Left NIPs Content and Right Image Gallery -->
+    <div class="w-full flex gap-8 lg:gap-12 relative z-10">
+      <!-- Left Side: NIPs Content -->
+      <div class="flex-1 flex flex-col items-stretch justify-center max-w-6xl">
+        <!-- Section Header -->
+        <div class="mb-12">
+          <span class="font-mono text-[10px] uppercase tracking-[0.3em] text-[#818CF8]"> 03 / Network Protocols </span>
+          <h2 class="mt-4 text-4xl md:text-6xl tracking-tight text-white font-bold">SUPPORTED NIPS</h2>
+          <p class="mt-4 font-mono text-sm text-gray-400 max-w-2xl">
+            0xchat supports a comprehensive list of Nostr Improvement Proposals for a complete decentralized communication experience.
+          </p>
+          <div class="flex items-center my-8 gap-4">
+            <font-awesome-icon icon="fa-solid fa-bolt" class="text-[#818CF8] text-2xl" />
+            <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-r from-[#818CF8] to-transparent" />
+          </div>
         </div>
-      </div>
 
-      <!-- NIPs Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl">
+        <!-- NIPs Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl">
         <div
           v-for="(nip, index) in nips"
           :key="index"
@@ -84,15 +91,102 @@
             <span class="text-[#818CF8]">→</span>
           </div>
         </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Creative Image Gallery -->
+      <div class="hidden lg:block w-1/3 max-w-md">
+        <div class="creative-gallery sticky top-24">
+          <div
+            v-for="(image, index) in images"
+            :key="index"
+            class="creative-item"
+            :class="{ 'animate-enter': isInView }"
+            :style="{
+              ...getImageStyle(index),
+              animationDelay: `${index * 0.6}s`
+            }"
+          >
+            <div class="relative overflow-visible">
+              <div 
+                class="image-wrapper"
+                :class="`item-${index % 3}`"
+              >
+                <img
+                  :src="`/images/${image}`"
+                  :alt="`0xchat screenshot ${index + 1}`"
+                  class="creative-image"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 const activeNIP = ref(null);
+const sectionRef = ref(null);
+const isInView = ref(false);
+
+// Image list for creative gallery
+const images = ref([
+ '07.png', 
+//  '08.png',
+ '11.png',
+]);
+
+// Generate creative random styles for each image
+const getImageStyle = (index) => {
+  // Create varied rotation angles (-8 to 8 degrees)
+  const rotations = [-5, 6, -4];
+  const rotation = rotations[index % rotations.length];
+  
+  // Create varied horizontal offsets (more spacing)
+  const offsets = [0, -12, 15];
+  const offset = offsets[index % offsets.length];
+  
+  // Create varied vertical spacing (more space between images)
+  const baseSpacing = 400; // Increased spacing for 3 images
+  const spacing = index * baseSpacing + (index % 2) * 100 - 120; // Move up by 120px
+  
+  // Create varied scale (smaller overall)
+  const scales = [0.74, 0.72, 0.76];
+  const scale = scales[index % scales.length];
+  
+  return {
+    '--initial-rotation': `${rotation}deg`,
+    '--initial-offset-x': `${offset}px`,
+    '--initial-offset-y': `${spacing}px`,
+    '--initial-scale': scale,
+  };
+};
+
+// Trigger animation when section comes into view
+onMounted(() => {
+  if (!sectionRef.value) return;
+
+  const observerOptions = {
+    threshold: 0.2, // Trigger when 20% of the section is visible
+    rootMargin: '0px 0px -100px 0px' // Start animation slightly before fully visible
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        isInView.value = true;
+        observer.unobserve(entry.target); // Only animate once
+      }
+    });
+  }, observerOptions);
+
+  observer.observe(sectionRef.value);
+});
 
 const nips = ref([
   { number: "NIP-01", icon: "fa-solid fa-link", title: "Basic protocol flow description", description: "Core Nostr protocol specification" },
@@ -150,5 +244,149 @@ const nips = ref([
 
 .animate-pulse-slower {
   animation: pulse-slower 12s ease-in-out infinite;
+}
+
+/* Creative gallery layout - organic and free-flowing */
+.creative-gallery {
+  position: relative;
+  padding: 2rem 0;
+  min-height: 130vh;
+}
+
+.creative-item {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  /* Set initial state to animation start position */
+  transform: translateX(calc(var(--initial-offset-x, 0) - 30px)) 
+             translateY(calc(var(--initial-offset-y, 0) + 80px)) 
+             rotate(calc(var(--initial-rotation, 0deg) - 8deg)) 
+             scale(calc(var(--initial-scale, 1) * 0.7));
+  filter: blur(10px);
+  will-change: transform, opacity, filter;
+  /* Animation only starts when .animate-enter class is added */
+}
+
+.creative-item.animate-enter {
+  animation: float-in 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Image wrapper with creative styling */
+.image-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(129, 140, 248, 0.1);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(129, 140, 248, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+/* Different sizes for variety */
+.image-wrapper.item-0 {
+  width: 95%;
+  margin-left: 5%;
+}
+
+.image-wrapper.item-1 {
+  width: 88%;
+  margin-left: 0;
+}
+
+.image-wrapper.item-2 {
+  width: 92%;
+  margin-left: 8%;
+}
+
+/* Image styling */
+.creative-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.92) contrast(1.08) saturate(1.1);
+  transition: filter 0.3s ease;
+}
+
+/* Enhanced entrance animation */
+@keyframes float-in {
+  0% {
+    opacity: 0;
+    transform: translateX(calc(var(--initial-offset-x, 0) - 30px)) 
+               translateY(calc(var(--initial-offset-y, 0) + 80px)) 
+               rotate(calc(var(--initial-rotation, 0deg) - 8deg)) 
+               scale(calc(var(--initial-scale, 1) * 0.7));
+    filter: blur(10px);
+  }
+  40% {
+    opacity: 0.6;
+    transform: translateX(calc(var(--initial-offset-x, 0) - 5px)) 
+               translateY(calc(var(--initial-offset-y, 0) + 20px)) 
+               rotate(calc(var(--initial-rotation, 0deg) - 2deg)) 
+               scale(calc(var(--initial-scale, 1) * 0.9));
+    filter: blur(4px);
+  }
+  70% {
+    opacity: 0.9;
+    transform: translateX(var(--initial-offset-x, 0)) 
+               translateY(calc(var(--initial-offset-y, 0) - 15px)) 
+               rotate(calc(var(--initial-rotation, 0deg) + 3deg)) 
+               scale(calc(var(--initial-scale, 1) * 1.08));
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(var(--initial-offset-x, 0)) 
+               translateY(var(--initial-offset-y, 0)) 
+               rotate(var(--initial-rotation, 0deg)) 
+               scale(var(--initial-scale, 1));
+    filter: blur(0px);
+  }
+}
+
+/* Subtle continuous floating effect - applied to image wrapper */
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-6px) rotate(0.3deg);
+  }
+  66% {
+    transform: translateY(3px) rotate(-0.3deg);
+  }
+}
+
+.image-wrapper {
+  animation: gentle-float 8s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.image-wrapper.item-0 {
+  animation-delay: 1.5s;
+}
+
+.image-wrapper.item-1 {
+  animation-delay: 3.5s;
+}
+
+.image-wrapper.item-2 {
+  animation-delay: 5.5s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1280px) {
+  .creative-gallery {
+    min-height: auto;
+  }
+  
+  .creative-item {
+    position: relative;
+    transform: none !important;
+    margin-bottom: 2rem;
+  }
 }
 </style>

@@ -1,10 +1,47 @@
 <template>
-  <section id="contact" class="relative py-48 pl-6 md:pl-12 pr-6 md:pr-28 overflow-hidden bg-black">
+  <section 
+    ref="sectionRef"
+    id="contact" 
+    class="relative py-48 pl-6 md:pl-12 pr-6 md:pr-28 overflow-hidden bg-black"
+  >
     <!-- Animated background elements -->
     <div class="absolute -top-40 -right-40 w-80 h-80 bg-[#818CF8]/10 rounded-full blur-3xl opacity-20 animate-pulse" />
     <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-[#818CF8]/10 rounded-full blur-3xl opacity-20 animate-pulse" style="animation-delay: 2s" />
 
-    <div class="relative z-10 max-w-4xl ml-auto">
+    <!-- Main Content Container with Left Image Gallery and Right Contact Content -->
+    <div class="w-full flex gap-8 lg:gap-12 relative z-10">
+      <!-- Left Side: Creative Image Gallery -->
+      <div class="hidden lg:block w-1/3 max-w-md">
+        <div class="creative-gallery sticky top-24">
+          <div
+            v-for="(image, index) in images"
+            :key="index"
+            class="creative-item"
+            :class="{ 'animate-enter': isInView }"
+            :style="{
+              ...getImageStyle(index),
+              animationDelay: `${index * 0.6}s`
+            }"
+          >
+            <div class="relative overflow-visible">
+              <div 
+                class="image-wrapper"
+                :class="`item-${index % 3}`"
+              >
+                <img
+                  :src="`/images/${image}`"
+                  :alt="`0xchat screenshot ${index + 1}`"
+                  class="creative-image"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Contact Content -->
+      <div class="flex-1 flex flex-col items-stretch justify-center max-w-4xl ml-auto">
       <!-- Emoji decoration -->
 
       <!-- Section Header -->
@@ -155,11 +192,70 @@
           <p class="font-mono text-xs md:text-sm text-gray-400 uppercase tracking-wider">Ship Together</p>
         </div>
       </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup>
+import { ref, onMounted } from "vue";
+
+const sectionRef = ref(null);
+const isInView = ref(false);
+
+// Image list for creative gallery (remaining images)
+const images = ref([
+  '06.png',
+  '09.png',
+  // '10.png',
+]);
+
+// Generate creative random styles for each image
+const getImageStyle = (index) => {
+  // Create varied rotation angles (-8 to 8 degrees)
+  const rotations = [-7, 5, -6];
+  const rotation = rotations[index % rotations.length];
+  
+  // Create varied horizontal offsets (shifted right)
+  const offsets = [10, 0, 20];
+  const offset = offsets[index % offsets.length];
+  
+  // Create varied vertical spacing (more space between images)
+  const baseSpacing = 380; // Balanced spacing between images
+  const spacing = index * baseSpacing + (index % 2) * 90 - 100; // Move up by 100px
+  
+  // Create varied scale (smaller overall)
+  const scales = [0.75, 0.73, 0.77];
+  const scale = scales[index % scales.length];
+  
+  return {
+    '--initial-rotation': `${rotation}deg`,
+    '--initial-offset-x': `${offset}px`,
+    '--initial-offset-y': `${spacing}px`,
+    '--initial-scale': scale,
+  };
+};
+
+// Trigger animation when section comes into view
+onMounted(() => {
+  if (!sectionRef.value) return;
+
+  const observerOptions = {
+    threshold: 0.2, // Trigger when 20% of the section is visible
+    rootMargin: '0px 0px -100px 0px' // Start animation slightly before fully visible
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        isInView.value = true;
+        observer.unobserve(entry.target); // Only animate once
+      }
+    });
+  }, observerOptions);
+
+  observer.observe(sectionRef.value);
+});
 </script>
 
 <style scoped>
@@ -176,5 +272,149 @@
 
 .animate-fade-in {
   animation: fade-in 0.8s ease-out;
+}
+
+/* Creative gallery layout - organic and free-flowing */
+.creative-gallery {
+  position: relative;
+  padding: 2rem 0;
+  min-height: 120vh;
+}
+
+.creative-item {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  /* Set initial state to animation start position */
+  transform: translateX(calc(var(--initial-offset-x, 0) - 30px)) 
+             translateY(calc(var(--initial-offset-y, 0) + 80px)) 
+             rotate(calc(var(--initial-rotation, 0deg) - 8deg)) 
+             scale(calc(var(--initial-scale, 1) * 0.7));
+  filter: blur(10px);
+  will-change: transform, opacity, filter;
+  /* Animation only starts when .animate-enter class is added */
+}
+
+.creative-item.animate-enter {
+  animation: float-in 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Image wrapper with creative styling */
+.image-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(129, 140, 248, 0.1);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(129, 140, 248, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+/* Different sizes for variety */
+.image-wrapper.item-0 {
+  width: 95%;
+  margin-left: 5%;
+}
+
+.image-wrapper.item-1 {
+  width: 88%;
+  margin-left: 0;
+}
+
+.image-wrapper.item-2 {
+  width: 92%;
+  margin-left: 8%;
+}
+
+/* Image styling */
+.creative-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.92) contrast(1.08) saturate(1.1);
+  transition: filter 0.3s ease;
+}
+
+/* Enhanced entrance animation */
+@keyframes float-in {
+  0% {
+    opacity: 0;
+    transform: translateX(calc(var(--initial-offset-x, 0) - 30px)) 
+               translateY(calc(var(--initial-offset-y, 0) + 80px)) 
+               rotate(calc(var(--initial-rotation, 0deg) - 8deg)) 
+               scale(calc(var(--initial-scale, 1) * 0.7));
+    filter: blur(10px);
+  }
+  40% {
+    opacity: 0.6;
+    transform: translateX(calc(var(--initial-offset-x, 0) - 5px)) 
+               translateY(calc(var(--initial-offset-y, 0) + 20px)) 
+               rotate(calc(var(--initial-rotation, 0deg) - 2deg)) 
+               scale(calc(var(--initial-scale, 1) * 0.9));
+    filter: blur(4px);
+  }
+  70% {
+    opacity: 0.9;
+    transform: translateX(var(--initial-offset-x, 0)) 
+               translateY(calc(var(--initial-offset-y, 0) - 15px)) 
+               rotate(calc(var(--initial-rotation, 0deg) + 3deg)) 
+               scale(calc(var(--initial-scale, 1) * 1.08));
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(var(--initial-offset-x, 0)) 
+               translateY(var(--initial-offset-y, 0)) 
+               rotate(var(--initial-rotation, 0deg)) 
+               scale(var(--initial-scale, 1));
+    filter: blur(0px);
+  }
+}
+
+/* Subtle continuous floating effect - applied to image wrapper */
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-6px) rotate(0.3deg);
+  }
+  66% {
+    transform: translateY(3px) rotate(-0.3deg);
+  }
+}
+
+.image-wrapper {
+  animation: gentle-float 8s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.image-wrapper.item-0 {
+  animation-delay: 1.5s;
+}
+
+.image-wrapper.item-1 {
+  animation-delay: 3.5s;
+}
+
+.image-wrapper.item-2 {
+  animation-delay: 5.5s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1280px) {
+  .creative-gallery {
+    min-height: auto;
+  }
+  
+  .creative-item {
+    position: relative;
+    transform: none !important;
+    margin-bottom: 2rem;
+  }
 }
 </style>
