@@ -1,0 +1,277 @@
+<template>
+  <section id="services" class="relative min-h-screen flex items-center pl-6 md:pl-12 pr-6 md:pr-28 overflow-hidden bg-black">
+    <!-- Animated background elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-3xl animate-pulse-slow" />
+      <div class="absolute bottom-1/4 left-1/3 w-[600px] h-[600px] bg-cyan-300/10 rounded-full blur-3xl animate-pulse-slower" />
+    </div>
+
+    <!-- Side Label (Vertical) -->
+    <div class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-10">
+      <span
+        class="font-mono text-xs uppercase tracking-[0.3em] text-gray-400 rotate-90 origin-right block whitespace-nowrap hover-gradient-text transition-colors duration-300"
+      >
+        SERVICES
+      </span>
+    </div>
+
+    <div class="flex flex-col items-stretch justify-center h-full relative z-10 max-w-6xl ml-auto">
+      <!-- Section Header -->
+      <div class="mb-12 text-right">
+        <span class="font-mono text-[10px] uppercase tracking-[0.3em] gradient-text"> 02 / What We Offer </span>
+        <h2 class="mt-4 text-4xl md:text-6xl tracking-tight text-white font-bold"> FEATURES</h2>
+        <p class="mt-4 font-mono text-sm text-gray-400 max-w-2xl ml-auto">
+          Everything you need to launch and grow 0xchat — a fast, private messaging app built for real-world use.
+        </p>
+        <div class="flex items-center justify-end my-8 gap-4">
+          <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-l from-[#C084FC] via-[#818CF8] to-transparent" />
+          <font-awesome-icon icon="fa-solid fa-bolt" class="gradient-icon text-2xl" />
+        </div>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl ml-auto">
+        <div
+          v-for="(service, index) in services"
+          :key="index"
+          @mouseenter="activeService = index"
+          @mouseleave="activeService = null"
+          class="group relative border border-gray-800/40 p-8 transition-all duration-500 cursor-pointer hover:border-gradient-feature text-right"
+          :class="activeService === index ? 'bg-gradient-feature-light' : ''"
+        >
+          <!-- Animated corner bracket -->
+          <div class="absolute top-0 right-0 w-16 h-16 transition-all duration-500" :class="activeService === index ? 'opacity-100' : 'opacity-0'">
+            <div class="absolute top-0 right-0 w-full h-[2px] bg-gradient-to-l from-[#C084FC] via-[#818CF8] to-transparent" />
+            <div class="absolute top-0 right-0 w-[2px] h-full bg-gradient-to-b from-[#C084FC] via-[#818CF8] to-transparent" />
+          </div>
+
+          <!-- Service number -->
+          <div class="flex items-start justify-between mb-6">
+            <span
+              class="font-mono text-6xl text-gray-800/40 font-bold transition-all duration-300"
+              :class="activeService === index ? 'text-gradient-feature-number' : ''"
+            >
+              {{ String(index + 1).padStart(2, "0") }}
+            </span>
+            <div class="text-5xl transition-transform duration-500" :class="activeService === index ? 'scale-110' : ''">
+              <font-awesome-icon :icon="service.icon" class="transition-colors duration-300" :class="activeService === index ? 'gradient-icon' : 'text-gray-400'" />
+            </div>
+          </div>
+
+          <!-- Service content -->
+          <div class="relative z-10">
+            <h3
+              class="text-2xl md:text-3xl tracking-tight mb-3 transition-colors duration-300 font-bold"
+              :class="activeService === index ? 'gradient-text' : 'text-white'"
+            >
+              {{ service.title }}
+            </h3>
+
+            <p class="font-mono text-xs text-gray-400 leading-relaxed mb-4 transition-all duration-300" :class="activeService === index ? 'text-gray-300' : ''">
+              {{ service.description }}
+            </p>
+
+            <!-- Tech stack tags -->
+            <div class="flex flex-wrap gap-2 justify-end mb-4">
+              <span
+                v-for="(tech, techIndex) in service.tech"
+                :key="techIndex"
+                class="font-mono text-[9px] px-2 py-1 border border-gray-700 rounded uppercase tracking-wider transition-all duration-300"
+                :class="activeService === index ? 'border-gradient-feature-tag text-gradient-feature-tag' : 'text-gray-500'"
+              >
+                {{ tech }}
+              </span>
+            </div>
+
+            <!-- Features list -->
+            <div class="space-y-2 transition-all duration-500 overflow-hidden" :class="activeService === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'">
+              <div class="h-[1px] bg-gradient-to-l from-[#C084FC]/40 via-[#818CF8]/40 to-transparent mb-3" />
+              <div
+                v-for="(feature, featureIndex) in service.features"
+                :key="featureIndex"
+                class="flex items-center justify-end gap-2 font-mono text-xs text-gray-400"
+              >
+                <span>{{ feature }}</span>
+                <span class="gradient-text">→</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hover indicator -->
+          <div
+            class="absolute left-4 top-1/2 -translate-y-1/2 transition-all duration-300"
+            :class="activeService === index ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'"
+          >
+            <span class="gradient-text text-xl">→</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup>
+import { ref } from "vue";
+
+const activeService = ref(null);
+
+const services = ref([
+  {
+    icon: "fa-solid fa-wand-magic-sparkles",
+    title: "Easy to use",
+    description: "No Registration Required - Skip the usual hassle of providing a phone number, email, or name.",
+    tech: ["No Setup", "Instant Access", "User Friendly"],
+    features: ["Just dive right in", "Free from friction", "Seamless communication", "Zero barriers to entry"],
+  },
+  {
+    icon: "fa-solid fa-link",
+    title: "Built on the Nostr protocol",
+    description: "You are in control of your data - decentralized and open communication.",
+    tech: ["Decentralized", "Open Source", "Nostr"],
+    features: ["Own your data", "No central server", "Open protocol", "Full control & freedom"],
+  },
+  {
+    icon: "fa-solid fa-lock",
+    title: "Encrypted Messages",
+    description: "Our direct messages and friends list are secured with end-to-end encryption.",
+    tech: ["E2E Encryption", "Privacy", "Security"],
+    features: ["Private conversations", "Encrypted contacts list", "Secure friends management", "Only you and contacts see messages"],
+  },
+  {
+    icon: "fa-solid fa-users",
+    title: "Private Group",
+    description: "Create encrypted group chats with friends, family, or colleagues.",
+    tech: ["Group Chat", "Encryption", "Privacy"],
+    features: ["Encrypted group chats", "Member management", "Group privacy", "Invite-only control"],
+  },
+  {
+    icon: "fa-solid fa-phone",
+    title: "Voice & Video Calls",
+    description: "Experience simple and private face-to-face communication with high-definition calls.",
+    tech: ["WebRTC", "HD Quality", "P2P"],
+    features: ["High-definition audio", "Video calls", "Custom ICE service", "Enhanced privacy options"],
+  },
+  {
+    icon: "fa-solid fa-bolt",
+    title: "Lightning Payments",
+    description: "Integrated with the Cashu wallet, making transfers and payments effortless.",
+    tech: ["Lightning Network", "Cashu", "Instant Payments"],
+    features: ["Instant transactions", "Easy transfers", "Secure payments", "Integrated wallet"],
+  },
+  // New feature additions
+  {
+    icon: "fa-solid fa-network-wired",
+    title: "Relay Groups",
+    description: "Coordinate large group messaging across relay groups for scale.",
+    tech: ["Relay Groups", "Scaling", "NIP-29"],
+    features: ["Large group support", "Relay coordination", "Better scalability", "Configurable policies"],
+  },
+  {
+    icon: "fa-solid fa-newspaper",
+    title: "Nostr Posts",
+    description: "Create and interact with Nostr notes and long-form content.",
+    tech: ["Posts", "Notes", "Nostr"],
+    features: ["Publish notes", "Read timelines", "Reply & react", "Share content"],
+  },
+  {
+    icon: "fa-solid fa-puzzle-piece",
+    title: "Napps (Nostr Apps)",
+    description: "Run embedded Nostr apps inside the client with safe permissions.",
+    tech: ["Napps", "Extensions", "Embedded"],
+    features: ["Launch in-app apps", "Secure permissions", "Seamless integration", "Discover tools"],
+  },
+  {
+    icon: "fa-solid fa-user-secret",
+    title: "Embedded Tor",
+    description: "Route traffic via Tor to reduce metadata and enhance privacy.",
+    tech: ["Tor", "Privacy", "Anonymity"],
+    features: ["Tor routing", "Less metadata", "Optional per feature", "Censorship resistance"],
+  },
+]);
+</script>
+
+<style scoped>
+/* Gradient utility classes */
+.gradient-text {
+  background: linear-gradient(135deg, #C084FC 0%, #818CF8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hover-gradient-text:hover {
+  background: linear-gradient(135deg, #C084FC 0%, #818CF8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-icon {
+  color: #818CF8;
+  transition: color 0.3s ease;
+}
+
+.gradient-icon:hover {
+  color: #C084FC;
+}
+
+.hover\:border-gradient-feature:hover {
+  border-color: #C084FC;
+  border-image: linear-gradient(135deg, #C084FC 0%, #818CF8 100%) 1;
+}
+
+.bg-gradient-feature-light {
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.05) 0%, rgba(129, 140, 248, 0.05) 100%);
+}
+
+.text-gradient-feature-number {
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.2) 0%, rgba(129, 140, 248, 0.2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-gradient-feature-tag {
+  border-color: rgba(192, 132, 252, 0.4);
+  border-image: linear-gradient(135deg, rgba(192, 132, 252, 0.4) 0%, rgba(129, 140, 248, 0.4) 100%) 1;
+}
+
+.text-gradient-feature-tag {
+  background: linear-gradient(135deg, #C084FC 0%, #818CF8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.15;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pulse-slower {
+  0%,
+  100% {
+    opacity: 0.05;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+.animate-pulse-slower {
+  animation: pulse-slower 12s ease-in-out infinite;
+}
+</style>
