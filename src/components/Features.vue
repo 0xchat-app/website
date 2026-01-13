@@ -9,7 +9,7 @@
     <!-- Side Label (Vertical) -->
     <div class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-10">
       <span
-        class="font-mono text-xs uppercase tracking-[0.3em] text-gray-400 rotate-90 origin-right block whitespace-nowrap hover:text-[#818CF8] transition-colors duration-300"
+        class="font-mono text-xs uppercase tracking-[0.3em] text-gray-400 rotate-90 origin-right block whitespace-nowrap hover-gradient-text transition-colors duration-300"
       >
         SERVICES
       </span>
@@ -18,14 +18,14 @@
     <div class="flex flex-col items-stretch justify-center h-full relative z-10 max-w-6xl ml-auto">
       <!-- Section Header -->
       <div class="mb-12 text-right">
-        <span class="font-mono text-[10px] uppercase tracking-[0.3em] text-[#818CF8]"> 02 / What We Offer </span>
+        <span class="font-mono text-[10px] uppercase tracking-[0.3em] gradient-text"> 02 / What We Offer </span>
         <h2 class="mt-4 text-4xl md:text-6xl tracking-tight text-white font-bold"> FEATURES</h2>
         <p class="mt-4 font-mono text-sm text-gray-400 max-w-2xl ml-auto">
           Everything you need to launch and grow 0xchat — a fast, private messaging app built for real-world use.
         </p>
         <div class="flex items-center justify-end my-8 gap-4">
-          <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-l from-[#818CF8] to-transparent" />
-          <font-awesome-icon icon="fa-solid fa-bolt" class="text-[#818CF8] text-2xl" />
+          <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-l from-[#C084FC] via-[#818CF8] to-transparent" />
+          <font-awesome-icon icon="fa-solid fa-bolt" class="gradient-icon text-2xl" />
         </div>
       </div>
 
@@ -36,25 +36,25 @@
           :key="index"
           @mouseenter="activeService = index"
           @mouseleave="activeService = null"
-          class="group relative border border-gray-800/40 p-8 transition-all duration-500 cursor-pointer hover:border-[#818CF8]/60 text-right"
-          :class="activeService === index ? 'bg-[#818CF8]/5' : ''"
+          class="group relative border border-gray-800/40 p-8 transition-all duration-500 cursor-pointer hover:border-gradient-feature text-right"
+          :class="activeService === index ? 'bg-gradient-feature-light' : ''"
         >
           <!-- Animated corner bracket -->
           <div class="absolute top-0 right-0 w-16 h-16 transition-all duration-500" :class="activeService === index ? 'opacity-100' : 'opacity-0'">
-            <div class="absolute top-0 right-0 w-full h-[2px] bg-gradient-to-l from-[#818CF8] to-transparent" />
-            <div class="absolute top-0 right-0 w-[2px] h-full bg-gradient-to-b from-[#818CF8] to-transparent" />
+            <div class="absolute top-0 right-0 w-full h-[2px] bg-gradient-to-l from-[#C084FC] via-[#818CF8] to-transparent" />
+            <div class="absolute top-0 right-0 w-[2px] h-full bg-gradient-to-b from-[#C084FC] via-[#818CF8] to-transparent" />
           </div>
 
           <!-- Service number -->
           <div class="flex items-start justify-between mb-6">
             <span
               class="font-mono text-6xl text-gray-800/40 font-bold transition-all duration-300"
-              :class="activeService === index ? 'text-[#818CF8]/20' : ''"
+              :class="activeService === index ? 'text-gradient-feature-number' : ''"
             >
               {{ String(index + 1).padStart(2, "0") }}
             </span>
             <div class="text-5xl transition-transform duration-500" :class="activeService === index ? 'scale-110' : ''">
-              <font-awesome-icon :icon="service.icon" class="transition-colors duration-300" :class="activeService === index ? 'text-[#818CF8]' : 'text-gray-400'" />
+              <font-awesome-icon :icon="service.icon" class="transition-colors duration-300" :class="activeService === index ? 'gradient-icon' : 'text-gray-400'" />
             </div>
           </div>
 
@@ -62,7 +62,7 @@
           <div class="relative z-10">
             <h3
               class="text-2xl md:text-3xl tracking-tight mb-3 transition-colors duration-300 font-bold"
-              :class="activeService === index ? 'text-[#818CF8]' : 'text-white'"
+              :class="activeService === index ? 'gradient-text' : 'text-white'"
             >
               {{ service.title }}
             </h3>
@@ -77,7 +77,7 @@
                 v-for="(tech, techIndex) in service.tech"
                 :key="techIndex"
                 class="font-mono text-[9px] px-2 py-1 border border-gray-700 rounded uppercase tracking-wider transition-all duration-300"
-                :class="activeService === index ? 'border-[#818CF8]/40 text-[#818CF8]' : 'text-gray-500'"
+                :class="activeService === index ? 'border-gradient-feature-tag text-gradient-feature-tag' : 'text-gray-500'"
               >
                 {{ tech }}
               </span>
@@ -85,14 +85,14 @@
 
             <!-- Features list -->
             <div class="space-y-2 transition-all duration-500 overflow-hidden" :class="activeService === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'">
-              <div class="h-[1px] bg-gradient-to-l from-[#818CF8]/40 to-transparent mb-3" />
+              <div class="h-[1px] bg-gradient-to-l from-[#C084FC]/40 via-[#818CF8]/40 to-transparent mb-3" />
               <div
                 v-for="(feature, featureIndex) in service.features"
                 :key="featureIndex"
                 class="flex items-center justify-end gap-2 font-mono text-xs text-gray-400"
               >
                 <span>{{ feature }}</span>
-                <span class="text-[#818CF8]">→</span>
+                <span class="gradient-text">→</span>
               </div>
             </div>
           </div>
@@ -102,7 +102,7 @@
             class="absolute left-4 top-1/2 -translate-y-1/2 transition-all duration-300"
             :class="activeService === index ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'"
           >
-            <span class="text-[#818CF8] text-xl">→</span>
+            <span class="gradient-text text-xl">→</span>
           </div>
         </div>
       </div>
@@ -152,25 +152,11 @@ const services = ref([
     features: ["High-definition audio", "Video calls", "Custom ICE service", "Enhanced privacy options"],
   },
   {
-    icon: "fa-solid fa-tower-broadcast",
-    title: "Open Channels",
-    description: "Explore the boundless realm of open channels and find communities.",
-    tech: ["Public Channels", "Communities", "Discovery"],
-    features: ["Public channel discovery", "Join seamlessly", "Community building", "Endless communication"],
-  },
-  {
     icon: "fa-solid fa-bolt",
     title: "Lightning Payments",
     description: "Integrated with the Cashu wallet, making transfers and payments effortless.",
     tech: ["Lightning Network", "Cashu", "Instant Payments"],
     features: ["Instant transactions", "Easy transfers", "Secure payments", "Integrated wallet"],
-  },
-  {
-    icon: "fa-solid fa-medal",
-    title: "Badge Collections",
-    description: "Make your 0xchat profile uniquely yours with our Badge Collection feature.",
-    tech: ["Profile Customization", "Achievements", "Identity"],
-    features: ["Collect badges", "Display achievements", "Unique profile", "Personal identity"],
   },
   // New feature additions
   {
@@ -189,7 +175,7 @@ const services = ref([
   },
   {
     icon: "fa-solid fa-puzzle-piece",
-    title: "Napps (Embedded Apps)",
+    title: "Napps (Nostr Apps)",
     description: "Run embedded Nostr apps inside the client with safe permissions.",
     tech: ["Napps", "Extensions", "Embedded"],
     features: ["Launch in-app apps", "Secure permissions", "Seamless integration", "Discover tools"],
@@ -205,6 +191,58 @@ const services = ref([
 </script>
 
 <style scoped>
+/* Gradient utility classes */
+.gradient-text {
+  background: linear-gradient(135deg, #C084FC 0%, #818CF8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hover-gradient-text:hover {
+  background: linear-gradient(135deg, #C084FC 0%, #818CF8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-icon {
+  color: #818CF8;
+  transition: color 0.3s ease;
+}
+
+.gradient-icon:hover {
+  color: #C084FC;
+}
+
+.hover\:border-gradient-feature:hover {
+  border-color: #C084FC;
+  border-image: linear-gradient(135deg, #C084FC 0%, #818CF8 100%) 1;
+}
+
+.bg-gradient-feature-light {
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.05) 0%, rgba(129, 140, 248, 0.05) 100%);
+}
+
+.text-gradient-feature-number {
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.2) 0%, rgba(129, 140, 248, 0.2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-gradient-feature-tag {
+  border-color: rgba(192, 132, 252, 0.4);
+  border-image: linear-gradient(135deg, rgba(192, 132, 252, 0.4) 0%, rgba(129, 140, 248, 0.4) 100%) 1;
+}
+
+.text-gradient-feature-tag {
+  background: linear-gradient(135deg, #C084FC 0%, #818CF8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @keyframes pulse-slow {
   0%,
   100% {

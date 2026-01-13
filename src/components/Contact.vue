@@ -1,22 +1,22 @@
 <template>
   <section id="contact" class="relative py-48 pl-6 md:pl-12 pr-6 md:pr-28 overflow-hidden bg-black">
     <!-- Animated background elements -->
-    <div class="absolute -top-40 -right-40 w-80 h-80 bg-[#818CF8]/10 rounded-full blur-3xl opacity-20 animate-pulse" />
-    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-[#818CF8]/10 rounded-full blur-3xl opacity-20 animate-pulse" style="animation-delay: 2s" />
+    <div class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-[#C084FC]/10 to-[#818CF8]/10 rounded-full blur-3xl opacity-20 animate-pulse" />
+    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-[#C084FC]/10 to-[#818CF8]/10 rounded-full blur-3xl opacity-20 animate-pulse" style="animation-delay: 2s" />
 
     <div class="relative z-10 max-w-4xl ml-auto">
       <!-- Emoji decoration -->
 
       <!-- Section Header -->
       <div class="mb-12 text-right">
-        <span class="font-mono text-[10px] uppercase tracking-[0.3em] text-[#818CF8]"> 04 / Support </span>
+        <span class="font-mono text-[10px] uppercase tracking-[0.3em] gradient-text"> 04 / Support </span>
         <h2 class="mt-4 text-4xl md:text-6xl tracking-tight text-white font-bold animate-fade-in">CONTACT</h2>
         <p class="mt-4 font-mono text-sm text-gray-400 max-w-2xl ml-auto">
           Support, feedback, and community — everything you need to get the most out of 0xchat.
         </p>
         <div class="flex items-center justify-end my-8 gap-4">
-          <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-l from-[#818CF8] to-transparent" />
-          <font-awesome-icon icon="fa-solid fa-bolt" class="text-[#818CF8] text-2xl" />
+          <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-l from-[#C084FC] via-[#818CF8] to-transparent" />
+          <font-awesome-icon icon="fa-solid fa-bolt" class="gradient-icon text-2xl" />
         </div>
       </div>
 
@@ -24,20 +24,20 @@
       <div class="relative mb-12">
         <!-- Animated border -->
         <div
-          class="absolute inset-0 bg-gradient-to-r from-[#818CF8] via-[#818CF8] to-[#818CF8] rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur p-[2px]"
+          class="absolute inset-0 bg-gradient-to-r from-[#C084FC] via-[#818CF8] to-[#C084FC] rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur p-[2px]"
         />
 
         <!-- Email content -->
         <a href="mailto:support@0xchat.com" class="group relative block">
           <div
-            class="relative bg-black border border-[#818CF8]/40 rounded-lg px-8 md:px-12 py-6 md:py-8 transition-all duration-500 group-hover:border-[#818CF8]/80 group-hover:shadow-lg group-hover:shadow-[#818CF8]/20 w-fit ml-auto text-right"
+            class="relative bg-black border border-gradient-contact rounded-lg px-8 md:px-12 py-6 md:py-8 transition-all duration-500 group-hover:border-gradient-contact-hover group-hover:shadow-lg group-hover:shadow-gradient-contact w-fit ml-auto text-right"
           >
             <div class="flex items-center justify-end gap-3 mb-3">
-              <font-awesome-icon icon="fa-solid fa-envelope" class="w-5 h-5 md:w-6 md:h-6 text-[#818CF8]" />
+              <font-awesome-icon icon="fa-solid fa-envelope" class="w-5 h-5 md:w-6 md:h-6 gradient-icon" />
               <p class="font-mono text-sm md:text-lg text-gray-400 tracking-wider">CONTACT SUPPORT</p>
             </div>
             <p
-              class="font-[var(--font-orbitron)] text-3xl md:text-5xl text-[#818CF8] transition-all duration-300 group-hover:text-white group-hover:scale-105"
+              class="font-[var(--font-orbitron)] text-3xl md:text-5xl gradient-text transition-all duration-300 group-hover:text-white group-hover:scale-105"
             >
               support@0xchat.com
             </p>
@@ -52,10 +52,10 @@
       <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl ml-auto">
         <a
           href="mailto:support@0xchat.com?subject=0xchat%20Support%20Request"
-          class="group border border-[#818CF8]/30 rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-[#818CF8]/70 hover:shadow-lg hover:shadow-[#818CF8]/10"
+          class="group border border-gradient-contact-card rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-gradient-contact-card-hover hover:shadow-lg hover:shadow-gradient-contact-card"
         >
           <div class="flex items-center justify-end gap-3">
-            <font-awesome-icon icon="fa-solid fa-comment" class="w-5 h-5 text-[#818CF8]" />
+            <font-awesome-icon icon="fa-solid fa-comment" class="w-5 h-5 gradient-icon" />
             <p class="font-[var(--font-orbitron)] text-lg text-white">Get Support</p>
           </div>
           <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Share device, OS version, and screenshots if possible</p>
@@ -63,10 +63,10 @@
 
         <a
           href="mailto:support@0xchat.com?subject=0xchat%20Feedback"
-          class="group border border-[#818CF8]/30 rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-[#818CF8]/70 hover:shadow-lg hover:shadow-[#818CF8]/10"
+          class="group border border-gradient-contact-card rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-gradient-contact-card-hover hover:shadow-lg hover:shadow-gradient-contact-card"
         >
           <div class="flex items-center justify-end gap-3">
-            <font-awesome-icon icon="fa-solid fa-wand-magic-sparkles" class="w-5 h-5 text-[#818CF8]" />
+            <font-awesome-icon icon="fa-solid fa-wand-magic-sparkles" class="w-5 h-5 gradient-icon" />
             <p class="font-[var(--font-orbitron)] text-lg text-white">Send Feedback</p>
           </div>
           <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Tell us what to improve — UX, features, or performance</p>
@@ -76,11 +76,11 @@
           href="https://github.com/0xchat-app"
           target="_blank"
           rel="noopener noreferrer"
-          class="group border border-[#818CF8]/30 rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-[#818CF8]/70 hover:shadow-lg hover:shadow-[#818CF8]/10"
+          class="group border border-gradient-contact-card rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-gradient-contact-card-hover hover:shadow-lg hover:shadow-gradient-contact-card"
           aria-label="Open 0xchat on GitHub"
         >
           <div class="flex items-center justify-end gap-3">
-            <font-awesome-icon icon="fa-solid fa-bug" class="w-5 h-5 text-[#818CF8]" />
+            <font-awesome-icon icon="fa-solid fa-bug" class="w-5 h-5 gradient-icon" />
             <p class="font-[var(--font-orbitron)] text-lg text-white">Report a Bug</p>
           </div>
           <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Prefer GitHub for reproducible crashes and logs</p>
@@ -90,11 +90,11 @@
           href="https://github.com/0xchat-app"
           target="_blank"
           rel="noopener noreferrer"
-          class="group border border-[#818CF8]/30 rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-[#818CF8]/70 hover:shadow-lg hover:shadow-[#818CF8]/10"
+          class="group border border-gradient-contact-card rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-gradient-contact-card-hover hover:shadow-lg hover:shadow-gradient-contact-card"
           aria-label="Open 0xchat on GitHub"
         >
           <div class="flex items-center justify-end gap-3">
-            <font-awesome-icon icon="fa-brands fa-github" class="w-5 h-5 text-[#818CF8]" />
+            <font-awesome-icon icon="fa-brands fa-github" class="w-5 h-5 gradient-icon" />
             <p class="font-[var(--font-orbitron)] text-lg text-white">Open Source</p>
           </div>
           <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Releases, changelog, and contributions</p>
@@ -104,11 +104,11 @@
           href="https://primal.net/search/%230xchat"
           target="_blank"
           rel="noopener noreferrer"
-          class="group border border-[#818CF8]/30 rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-[#818CF8]/70 hover:shadow-lg hover:shadow-[#818CF8]/10"
+          class="group border border-gradient-contact-card rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-gradient-contact-card-hover hover:shadow-lg hover:shadow-gradient-contact-card"
           aria-label="See what people are saying about 0xchat on Primal"
         >
           <div class="flex items-center justify-end gap-3">
-            <font-awesome-icon icon="fa-solid fa-magnifying-glass" class="w-5 h-5 text-[#818CF8]" />
+            <font-awesome-icon icon="fa-solid fa-magnifying-glass" class="w-5 h-5 gradient-icon" />
             <p class="font-[var(--font-orbitron)] text-lg text-white">What People Say</p>
           </div>
           <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Browse #0xchat posts on Primal</p>
@@ -118,11 +118,11 @@
           href="https://primal.net/p/nprofile1qqs9ajjs5p904ml92evlkayppdpx2n3zdrq6ejnw2wqphxrzmd62swswfwcse"
           target="_blank"
           rel="noopener noreferrer"
-          class="group border border-[#818CF8]/30 rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-[#818CF8]/70 hover:shadow-lg hover:shadow-[#818CF8]/10"
+          class="group border border-gradient-contact-card rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-gradient-contact-card-hover hover:shadow-lg hover:shadow-gradient-contact-card"
           aria-label="Open the official 0xchat profile on Primal"
         >
           <div class="flex items-center justify-end gap-3">
-            <font-awesome-icon icon="fa-solid fa-certificate" class="w-5 h-5 text-[#818CF8]" />
+            <font-awesome-icon icon="fa-solid fa-certificate" class="w-5 h-5 gradient-icon" />
             <p class="font-[var(--font-orbitron)] text-lg text-white">Official Profile</p>
           </div>
           <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Follow 0xchat on Primal</p>
@@ -133,24 +133,24 @@
       <div class="mt-24 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 max-w-3xl ml-auto">
         <div class="group text-right">
           <div class="flex items-center justify-end gap-2 mb-2">
-            <font-awesome-icon icon="fa-solid fa-shield" class="w-5 h-5 text-[#818CF8]" />
-            <p class="font-[var(--font-orbitron)] text-2xl md:text-3xl text-[#818CF8] group-hover:scale-105 transition-transform duration-300">Privacy</p>
+            <font-awesome-icon icon="fa-solid fa-shield" class="w-5 h-5 gradient-icon" />
+            <p class="font-[var(--font-orbitron)] text-2xl md:text-3xl gradient-text group-hover:scale-105 transition-transform duration-300">Privacy</p>
           </div>
           <p class="font-mono text-xs md:text-sm text-gray-400 uppercase tracking-wider">Default Secure</p>
         </div>
 
         <div class="group text-right">
           <div class="flex items-center justify-end gap-2 mb-2">
-            <font-awesome-icon icon="fa-solid fa-bolt" class="w-5 h-5 text-[#818CF8]" />
-            <p class="font-[var(--font-orbitron)] text-2xl md:text-3xl text-[#818CF8] group-hover:scale-105 transition-transform duration-300">Fast</p>
+            <font-awesome-icon icon="fa-solid fa-bolt" class="w-5 h-5 gradient-icon" />
+            <p class="font-[var(--font-orbitron)] text-2xl md:text-3xl gradient-text group-hover:scale-105 transition-transform duration-300">Fast</p>
           </div>
           <p class="font-mono text-xs md:text-sm text-gray-400 uppercase tracking-wider">Built for Chat</p>
         </div>
 
         <div class="group text-right">
           <div class="flex items-center justify-end gap-2 mb-2">
-            <font-awesome-icon icon="fa-solid fa-code-branch" class="w-5 h-5 text-[#818CF8]" />
-            <p class="font-[var(--font-orbitron)] text-2xl md:text-3xl text-[#818CF8] group-hover:scale-105 transition-transform duration-300">Open</p>
+            <font-awesome-icon icon="fa-solid fa-code-branch" class="w-5 h-5 gradient-icon" />
+            <p class="font-[var(--font-orbitron)] text-2xl md:text-3xl gradient-text group-hover:scale-105 transition-transform duration-300">Open</p>
           </div>
           <p class="font-mono text-xs md:text-sm text-gray-400 uppercase tracking-wider">Ship Together</p>
         </div>
@@ -163,6 +163,51 @@
 </script>
 
 <style scoped>
+/* Gradient utility classes */
+.gradient-text {
+  background: linear-gradient(135deg, #C084FC 0%, #818CF8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-icon {
+  color: #818CF8;
+  transition: color 0.3s ease;
+}
+
+.gradient-icon:hover {
+  color: #C084FC;
+}
+
+.border-gradient-contact {
+  border-color: rgba(192, 132, 252, 0.4);
+  border-image: linear-gradient(135deg, rgba(192, 132, 252, 0.4) 0%, rgba(129, 140, 248, 0.4) 100%) 1;
+}
+
+.group-hover\:border-gradient-contact-hover:hover {
+  border-color: rgba(192, 132, 252, 0.8);
+  border-image: linear-gradient(135deg, rgba(192, 132, 252, 0.8) 0%, rgba(129, 140, 248, 0.8) 100%) 1;
+}
+
+.group-hover\:shadow-gradient-contact:hover {
+  box-shadow: 0 10px 30px rgba(192, 132, 252, 0.2);
+}
+
+.border-gradient-contact-card {
+  border-color: rgba(192, 132, 252, 0.3);
+  border-image: linear-gradient(135deg, rgba(192, 132, 252, 0.3) 0%, rgba(129, 140, 248, 0.3) 100%) 1;
+}
+
+.hover\:border-gradient-contact-card-hover:hover {
+  border-color: rgba(192, 132, 252, 0.7);
+  border-image: linear-gradient(135deg, rgba(192, 132, 252, 0.7) 0%, rgba(129, 140, 248, 0.7) 100%) 1;
+}
+
+.hover\:shadow-gradient-contact-card:hover {
+  box-shadow: 0 10px 30px rgba(192, 132, 252, 0.1);
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;

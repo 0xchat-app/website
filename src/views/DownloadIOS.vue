@@ -7,7 +7,7 @@
         <h1
           class="text-5xl md:text-6xl font-black text-white mb-4 tracking-tight"
         >
-          DOWNLOAD 0xchat⚡️
+          DOWNLOAD 0XCHAT⚡️
         </h1>
         <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
           Get 0xchat for iPhone and iPad

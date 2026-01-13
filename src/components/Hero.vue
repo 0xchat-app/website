@@ -4,14 +4,14 @@
 
     <!-- Animated gradient orbs -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#818CF8]/10 rounded-full blur-3xl animate-pulse-slow" />
+      <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-[#C084FC]/10 to-[#818CF8]/10 rounded-full blur-3xl animate-pulse-slow" />
       <div class="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] bg-orange-400/10 rounded-full blur-3xl animate-pulse-slower" />
     </div>
 
     <!-- Side Label (Vertical) -->
     <div class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-10 uppercase">
       <span
-        class="font-mono text-xs uppercase tracking-[0.3em] text-gray-400 -rotate-90 origin-left block whitespace-nowrap hover:text-[#818CF8] transition-colors duration-300"
+        class="font-mono text-xs uppercase tracking-[0.3em] text-gray-400 -rotate-90 origin-left block whitespace-nowrap hover-gradient-text transition-colors duration-300"
       >
         0xchat
       </span>
@@ -49,12 +49,11 @@
       <div class="flex items-center gap-6 mb-12 animate-fade-in-up">
         <!-- Circular Badge -->
         <div class="logo-badge">
-          <span class="logo-badge-text">0X</span>
+          <img src="/logo.png" alt="0X Logo" class="logo-badge-image" />
         </div>
         
         <!-- Logo Text -->
         <div class="flex items-center gap-3">
-          <span class="logo-text logo-ox">0X</span>
           <span class="logo-text logo-chat">CHAT</span>
           <span class="logo-lightning">⚡</span>
         </div>
@@ -72,28 +71,27 @@
         <p class="group hover:text-gray-300 transition-all duration-300 hover:translate-x-2">
           <span class="inline-block emoji-hover mr-2">⚡</span>
           0xchat is a
-          <span class="font-semibold text-white group-hover:text-[#818CF8] transition-colors duration-300">
+          <span class="font-semibold text-white group-hover-gradient-text transition-colors duration-300">
             <span class="inline-block emoji-hover">🔒</span> secure, <span class="inline-block emoji-hover">🔓</span> decentralized,
             <span class="inline-block emoji-hover">⧳</span> Nostr-powered</span
           >
           chat application.
           <span class="inline-block emoji-hover mx-1">💬</span>
-          Your data, <span class="text-[#818CF8] font-semibold">your control</span>
+          Your data, <span class="gradient-text font-semibold">your control</span>
           <span class="inline-block emoji-hover ml-1">🛡️</span>
-          — end-to-end encryption for <span class="font-semibold">all conversations</span>
-          <span class="inline-block emoji-hover ml-1">🔐</span>
+          <!-- — end-to-end encryption for <span class="font-semibold">all conversations</span>
+          <span class="inline-block emoji-hover ml-1">🔐</span> -->
         </p>
 
         <p class="group hover:text-gray-300 transition-all duration-300 hover:translate-x-2">
           <span class="inline-block emoji-hover mr-2">✨</span>
           No registration. No phone number. No corporate surveillance.
           <span class="inline-block emoji-hover mx-1">👤</span>
-          Just <span class="text-[#818CF8] font-semibold">private key</span> login and
+          Just <span class="gradient-text font-semibold">private key</span> login and
           <span class="relative inline-block text-white font-semibold group-hover:scale-110 transition-transform duration-300">
             true privacy
-            <span class="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-[#818CF8] via-cyan-400 to-[#818CF8] animate-shimmer" />
+            <span class="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-[#C084FC] via-cyan-400 to-[#818CF8] animate-shimmer" />
           </span>
-          .
           <span class="inline-block emoji-hover ml-1">🚀</span>
         </p>
       </div>
@@ -102,10 +100,10 @@
       <div class="mt-12 flex flex-col sm:flex-row gap-4 items-start">
         <router-link
           to="/download"
-          class="group relative inline-flex items-center justify-center gap-3 bg-[#818CF8] text-black font-bold text-lg px-10 py-5 overflow-hidden transition-all duration-500 hover:bg-[#818CF8] hover:shadow-2xl hover:shadow-[#818CF8]/60 hover:scale-110 hover:-translate-y-1 animate-pulse-subtle"
+          class="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#C084FC] to-[#818CF8] text-white font-bold text-lg px-10 py-5 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-[#C084FC]/60 hover:scale-110 hover:-translate-y-1 animate-pulse-subtle"
         >
-          <font-awesome-icon icon="fa-solid fa-download" class="w-6 h-6 relative z-10 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1" />
-          <span class="relative z-10 tracking-wider">GET APP</span>
+          <font-awesome-icon icon="fa-solid fa-download" class="w-6 h-6 relative z-10 text-white transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1" />
+          <span class="relative z-10 tracking-wider text-white">GET APP</span>
           <!-- Animated border corners -->
           <span class="absolute top-0 left-0 w-2 h-2 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
           <span class="absolute top-0 right-0 w-2 h-2 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
@@ -113,7 +111,7 @@
           <span class="absolute bottom-0 right-0 w-2 h-2 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
           <!-- Sliding background effect -->
           <span
-            class="absolute inset-0 bg-gradient-to-r from-[#818CF8] to-[#818CF8] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"
+            class="absolute inset-0 bg-gradient-to-r from-[#C084FC] to-[#818CF8] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"
           ></span>
         </router-link>
 
@@ -121,24 +119,24 @@
           href="https://github.com/0xchat-app"
           target="_blank"
           rel="noopener noreferrer"
-          class="group relative inline-flex items-center justify-center gap-3 bg-transparent border-2 border-gray-700 text-white font-bold text-lg px-10 py-5 overflow-hidden transition-all duration-500 hover:border-[#818CF8] hover:shadow-2xl hover:shadow-[#818CF8]/40 hover:scale-110 hover:-translate-y-1"
+          class="group relative inline-flex items-center justify-center gap-3 bg-transparent border-2 border-gray-700 text-white font-bold text-lg px-10 py-5 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-[#C084FC]/40 hover:scale-110 hover:-translate-y-1 gradient-border-button"
         >
           <!-- Animated border effect -->
-          <span class="absolute inset-0 border-2 border-[#818CF8] scale-0 group-hover:scale-100 transition-transform duration-500 origin-center"></span>
+          <span class="absolute inset-0 border-2 border-transparent scale-0 group-hover:scale-100 transition-transform duration-500 origin-center gradient-border-overlay"></span>
 
           <!-- Sweep effect -->
           <span
-            class="absolute inset-0 bg-gradient-to-r from-transparent via-[#818CF8]/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"
+            class="absolute inset-0 bg-gradient-to-r from-transparent via-[#C084FC]/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"
           ></span>
 
           <font-awesome-icon icon="fa-brands fa-github" class="w-6 h-6 relative z-10 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
           <span class="relative z-10 tracking-wider">GITHUB</span>
 
           <!-- Corner accents -->
-          <span class="absolute top-0 left-0 w-0 h-0.5 bg-[#818CF8] group-hover:w-8 transition-all duration-300"></span>
-          <span class="absolute top-0 left-0 w-0.5 h-0 bg-[#818CF8] group-hover:h-8 transition-all duration-300 delay-75"></span>
-          <span class="absolute bottom-0 right-0 w-0 h-0.5 bg-[#818CF8] group-hover:w-8 transition-all duration-300"></span>
-          <span class="absolute bottom-0 right-0 w-0.5 h-0 bg-[#818CF8] group-hover:h-8 transition-all duration-300 delay-75"></span>
+          <span class="absolute top-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#C084FC] to-[#818CF8] group-hover:w-8 transition-all duration-300"></span>
+          <span class="absolute top-0 left-0 w-0.5 h-0 bg-gradient-to-b from-[#C084FC] to-[#818CF8] group-hover:h-8 transition-all duration-300 delay-75"></span>
+          <span class="absolute bottom-0 right-0 w-0 h-0.5 bg-gradient-to-r from-[#C084FC] to-[#818CF8] group-hover:w-8 transition-all duration-300"></span>
+          <span class="absolute bottom-0 right-0 w-0.5 h-0 bg-gradient-to-b from-[#C084FC] to-[#818CF8] group-hover:h-8 transition-all duration-300 delay-75"></span>
         </a>
       </div>
     </div>
@@ -164,49 +162,93 @@ onUnmounted(() => {
 
 const newsHeadlines = ref([
   {
-    source: "TechCrunch",
-    text: "WhatsApp shares user data with Facebook for targeted advertising",
-    date: "Dec 2024"
+    source: "Forbes",
+    text: "Signal phone numbers exposed in Twilio data breach",
+    date: "Jun 2022"
+  },
+  {
+    source: "Bloomberg",
+    text: "Telegram tracks user IP addresses for security purposes",
+    date: "Apr 2021"
+  },
+  {
+    source: "The Verge",
+    text: "Telegram cloud chats stored unencrypted on servers",
+    date: "Mar 2021"
   },
   {
     source: "The Guardian",
-    text: "Telegram CEO arrested, encryption backdoor suspected",
-    date: "Nov 2024"
+    text: "WhatsApp forces users to share data with Facebook",
+    date: "Jan 2021"
+  },
+  {
+    source: "Ars Technica",
+    text: "WhatsApp backups stored unencrypted on Google Drive and iCloud",
+    date: "Oct 2020"
+  },
+  {
+    source: "TechCrunch",
+    text: "WhatsApp metadata reveals who you talk to and when",
+    date: "Jul 2019"
+  },
+  {
+    source: "TechCrunch",
+    text: "WhatsApp co-founder leaves over privacy concerns with Facebook",
+    date: "Sep 2017"
   },
   {
     source: "Reuters",
-    text: "Signal faces government pressure to implement backdoors",
-    date: "Oct 2024"
-  },
-  {
-    source: "Wired",
-    text: "Discord servers breached, millions of messages leaked",
-    date: "Sep 2024"
-  },
-  {
-    source: "NYT",
-    text: "FBI gains access to encrypted iMessage conversations",
-    date: "Aug 2024"
-  },
-  {
-    source: "BBC",
-    text: "Major messaging app hands over user data to authorities",
-    date: "Jul 2024"
-  },
-  {
-    source: "WSJ",
-    text: "Telegram criticized for sharing metadata with governments",
-    date: "Jun 2024"
-  },
-  {
-    source: "Forbes",
-    text: "WhatsApp encryption questioned after law enforcement access",
-    date: "May 2024"
+    text: "WhatsApp shares metadata with Facebook for ad targeting",
+    date: "Aug 2016"
   }
 ])
 </script>
 
 <style scoped>
+/* Gradient text utility classes */
+.gradient-text {
+  background: linear-gradient(135deg, #C084FC 0%, #818CF8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hover-gradient-text:hover {
+  background: linear-gradient(135deg, #C084FC 0%, #818CF8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.group-hover-gradient-text {
+  transition: all 0.3s ease;
+}
+
+.group:hover .group-hover-gradient-text {
+  background: linear-gradient(135deg, #C084FC 0%, #818CF8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gradient border utility */
+.gradient-border-button {
+  position: relative;
+}
+
+.gradient-border-button:hover {
+  border-color: transparent;
+}
+
+.gradient-border-overlay {
+  background: linear-gradient(135deg, #C084FC 0%, #818CF8 100%);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}
+
 @keyframes pulse-slow {
   0%,
   100% {
@@ -234,7 +276,7 @@ const newsHeadlines = ref([
 @keyframes pulse-subtle {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(129, 140, 248, 0.4);
+    box-shadow: 0 0 20px rgba(192, 132, 252, 0.4);
   }
   50% {
     box-shadow: 0 0 40px rgba(129, 140, 248, 0.6);
@@ -368,7 +410,7 @@ const newsHeadlines = ref([
 
 .emoji-hover:hover {
   transform: scale(1.3) rotate(10deg);
-  filter: drop-shadow(0 0 8px rgba(129, 140, 248, 0.5));
+  filter: drop-shadow(0 0 8px rgba(192, 132, 252, 0.5));
   animation: emoji-bounce 0.5s ease;
 }
 
@@ -387,26 +429,25 @@ const newsHeadlines = ref([
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #818CF8 0%, #818CF8 100%);
+  background: linear-gradient(135deg, #C084FC 0%, #818CF8 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 30px rgba(129, 140, 248, 0.5), 0 0 60px rgba(129, 140, 248, 0.3);
+  box-shadow: 0 0 30px rgba(192, 132, 252, 0.5), 0 0 60px rgba(129, 140, 248, 0.3);
   transition: all 0.3s ease;
   animation: logo-float 3s ease-in-out infinite;
 }
 
 .logo-badge:hover {
   transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 0 40px rgba(129, 140, 248, 0.7), 0 0 80px rgba(129, 140, 248, 0.4);
+  box-shadow: 0 0 40px rgba(192, 132, 252, 0.7), 0 0 80px rgba(129, 140, 248, 0.4);
 }
 
-.logo-badge-text {
-  font-family: var(--font-orbitron), monospace;
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: #000;
-  letter-spacing: -0.05em;
+.logo-badge-image {
+  width: 65%;
+  height: 65%;
+  object-fit: contain;
+  filter: brightness(100);
 }
 
 .logo-text {
@@ -418,8 +459,11 @@ const newsHeadlines = ref([
 }
 
 .logo-ox {
-  color: #818CF8;
-  text-shadow: 0 0 30px rgba(129, 140, 248, 0.6);
+  background: linear-gradient(135deg, #C084FC 0%, #818CF8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(192, 132, 252, 0.6));
 }
 
 .logo-chat {
@@ -434,7 +478,7 @@ const newsHeadlines = ref([
 .logo-lightning {
   font-size: 3.5rem;
   animation: lightning-pulse 2s ease-in-out infinite;
-  filter: drop-shadow(0 0 15px rgba(129, 140, 248, 0.9));
+  filter: drop-shadow(0 0 15px rgba(192, 132, 252, 0.9));
 }
 
 @keyframes logo-float {
