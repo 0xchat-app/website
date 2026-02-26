@@ -122,8 +122,8 @@ export default defineComponent({
       } else if (isAndroid) {
         window.location.href = 'https://play.google.com/store/apps/details?id=com.oxchat.lite'
       } else {
-        // Desktop: redirect to Google Play
-        window.location.href = 'https://play.google.com/store/apps/details?id=com.oxchat.lite'
+        // Desktop: redirect to desktop release page
+        window.location.href = 'https://github.com/0xchat-app/0xchat-app-main/releases/tag/v1.5.3-release-desktop'
       }
     }
 

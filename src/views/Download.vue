@@ -188,22 +188,31 @@
           </div>
         </router-link>
 
-        <!-- macOS Card (Coming Soon) -->
-        <div
-          class="group relative overflow-hidden bg-gray-900/50 rounded-3xl p-8 border border-gray-700 opacity-60 cursor-not-allowed"
-          aria-label="macOS: Coming Soon"
+        <!-- macOS Card -->
+        <a
+          href="https://github.com/0xchat-app/0xchat-app-main/releases/download/v1.5.3-release-desktop/0xchat-macos-1.5.3.dmg"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group relative overflow-hidden bg-gray-900 rounded-3xl p-8 border border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-500"
+          tabindex="0"
+          aria-label="macOS: Download for Mac computers"
         >
+          <!-- Gradient Glow -->
+          <div
+            class="absolute top-0 right-0 -mt-8 -mr-8 w-40 h-40 bg-blue-100 rounded-full blur-3xl opacity-0 group-hover:opacity-70 transition-opacity duration-500"
+          ></div>
+
           <div class="relative z-10">
             <!-- Icon -->
             <div
-              class="flex items-center justify-center w-20 h-20 bg-gray-800 rounded-2xl mb-6"
+              class="flex items-center justify-center w-20 h-20 bg-blue-900/30 rounded-2xl mb-6 group-hover:bg-blue-800/40 group-hover:scale-110 transition-all duration-300"
             >
               <font-awesome-icon icon="fa-brands fa-apple" class="text-4xl text-white" />
             </div>
 
             <!-- Content -->
             <h2
-              class="text-2xl font-bold text-white mb-2"
+              class="text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors"
             >
               macOS
             </h2>
@@ -211,29 +220,85 @@
               Download for Mac computers
             </p>
 
-            <!-- Coming Soon Badge -->
-            <div class="inline-block bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm font-semibold">
-              Coming Soon
+            <!-- Features -->
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-blue-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                GitHub Releases
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-blue-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Desktop App
+              </li>
+            </ul>
+
+            <!-- Arrow -->
+            <div
+              class="mt-6 flex items-center text-blue-400 font-semibold text-sm group-hover:translate-x-2 transition-transform"
+            >
+              Download now
+              <svg
+                class="w-4 h-4 ml-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
             </div>
           </div>
-        </div>
+        </a>
 
-        <!-- Linux Card (Coming Soon) -->
-        <div
-          class="group relative overflow-hidden bg-gray-900/50 rounded-3xl p-8 border border-gray-700 opacity-60 cursor-not-allowed"
-          aria-label="Linux: Coming Soon"
+        <!-- Linux Card -->
+        <a
+          href="https://github.com/0xchat-app/0xchat-app-main/releases/tag/v1.5.3-release-desktop"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group relative overflow-hidden bg-gray-900 rounded-3xl p-8 border border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-orange-500"
+          tabindex="0"
+          aria-label="Linux: Download for Linux systems"
         >
+          <!-- Gradient Glow -->
+          <div
+            class="absolute top-0 right-0 -mt-8 -mr-8 w-40 h-40 bg-orange-100 rounded-full blur-3xl opacity-0 group-hover:opacity-70 transition-opacity duration-500"
+          ></div>
+
           <div class="relative z-10">
             <!-- Icon -->
             <div
-              class="flex items-center justify-center w-20 h-20 bg-gray-800 rounded-2xl mb-6"
+              class="flex items-center justify-center w-20 h-20 bg-orange-900/30 rounded-2xl mb-6 group-hover:bg-orange-800/40 group-hover:scale-110 transition-all duration-300"
             >
               <font-awesome-icon icon="fa-brands fa-linux" class="text-4xl text-white" />
             </div>
 
             <!-- Content -->
             <h2
-              class="text-2xl font-bold text-white mb-2"
+              class="text-2xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors"
             >
               Linux
             </h2>
@@ -241,29 +306,85 @@
               Download for Linux systems
             </p>
 
-            <!-- Coming Soon Badge -->
-            <div class="inline-block bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm font-semibold">
-              Coming Soon
+            <!-- Features -->
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-orange-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                GitHub Releases
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-orange-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Desktop App
+              </li>
+            </ul>
+
+            <!-- Arrow -->
+            <div
+              class="mt-6 flex items-center text-orange-400 font-semibold text-sm group-hover:translate-x-2 transition-transform"
+            >
+              Download now
+              <svg
+                class="w-4 h-4 ml-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
             </div>
           </div>
-        </div>
+        </a>
 
-        <!-- Windows Card (Coming Soon) -->
-        <div
-          class="group relative overflow-hidden bg-gray-900/50 rounded-3xl p-8 border border-gray-700 opacity-60 cursor-not-allowed"
-          aria-label="Windows: Coming Soon"
+        <!-- Windows Card -->
+        <a
+          href="https://github.com/0xchat-app/0xchat-app-main/releases/download/v1.5.3-release-desktop/0xchat-windows-1.5.3.exe"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group relative overflow-hidden bg-gray-900 rounded-3xl p-8 border border-gray-700 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-500"
+          tabindex="0"
+          aria-label="Windows: Download for Windows PC"
         >
+          <!-- Gradient Glow -->
+          <div
+            class="absolute top-0 right-0 -mt-8 -mr-8 w-40 h-40 bg-cyan-100 rounded-full blur-3xl opacity-0 group-hover:opacity-70 transition-opacity duration-500"
+          ></div>
+
           <div class="relative z-10">
             <!-- Icon -->
             <div
-              class="flex items-center justify-center w-20 h-20 bg-gray-800 rounded-2xl mb-6"
+              class="flex items-center justify-center w-20 h-20 bg-cyan-900/30 rounded-2xl mb-6 group-hover:bg-cyan-800/40 group-hover:scale-110 transition-all duration-300"
             >
               <font-awesome-icon icon="fa-brands fa-windows" class="text-4xl text-white" />
             </div>
 
             <!-- Content -->
             <h2
-              class="text-2xl font-bold text-white mb-2"
+              class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors"
             >
               Windows
             </h2>
@@ -271,12 +392,59 @@
               Download for Windows PC
             </p>
 
-            <!-- Coming Soon Badge -->
-            <div class="inline-block bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm font-semibold">
-              Coming Soon
+            <!-- Features -->
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-cyan-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                GitHub Releases
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  class="w-4 h-4 text-cyan-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Desktop App
+              </li>
+            </ul>
+
+            <!-- Arrow -->
+            <div
+              class="mt-6 flex items-center text-cyan-400 font-semibold text-sm group-hover:translate-x-2 transition-transform"
+            >
+              Download now
+              <svg
+                class="w-4 h-4 ml-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
             </div>
           </div>
-        </div>
+        </a>
       </section>
 
       <!-- Back Button -->
