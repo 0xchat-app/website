@@ -1,7 +1,7 @@
 <template>
   <section id="hero" class="bg-white overflow-hidden">
-    <!-- Thin emerald top accent bar -->
-    <div class="h-[3px] bg-emerald-500" />
+    <!-- Thin green top accent bar -->
+    <div class="h-[3px] bg-[#888BF9]" />
 
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       <!-- Top navigation strip -->
@@ -25,13 +25,13 @@
       <div class="flex flex-col items-center text-center gap-8 pt-20 pb-12 animate-fade-up">
         <!-- Category pill -->
         <div class="inline-flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-full px-4 py-1.5">
-          <span class="w-2 h-2 rounded-full bg-emerald-500" />
+          <span class="w-2 h-2 rounded-full bg-[#888BF9]" />
           <span class="font-mono text-xs uppercase tracking-widest text-gray-500">Open Source · Nostr Protocol</span>
         </div>
 
         <!-- Wordmark -->
-        <h1 class="text-[clamp(4.5rem,14vw,11rem)] font-black tracking-tighter leading-none select-none">
-          <span class="text-emerald-500">0x</span><span class="text-gray-900">chat</span>
+        <h1 class="text-[clamp(4.5rem,14vw,11rem)] font-black tracking-tighter leading-none select-none group/mark cursor-default transition-transform duration-300 hover:scale-[1.02]">
+          <span class="text-[#888BF9] transition-all duration-300 group-hover/mark:[filter:drop-shadow(0_0_28px_#888BF999)]">0X</span><span class="text-gray-900 transition-colors duration-300 group-hover/mark:text-[#888BF9]" style="transition-delay:0ms">C</span><span class="text-gray-900 transition-colors duration-300 group-hover/mark:text-[#888BF9]" style="transition-delay:60ms">H</span><span class="text-gray-900 transition-colors duration-300 group-hover/mark:text-[#888BF9]" style="transition-delay:120ms">A</span><span class="text-gray-900 transition-colors duration-300 group-hover/mark:text-[#888BF9]" style="transition-delay:180ms">T</span>
         </h1>
 
         <!-- Tagline -->
@@ -41,7 +41,7 @@
 
         <!-- Rotating value point -->
         <div class="flex items-center gap-2 h-6 overflow-hidden">
-          <span class="text-emerald-500 shrink-0">✓</span>
+          <span class="text-[#888BF9] shrink-0">✓</span>
           <span class="font-mono text-sm text-gray-500">{{ currentValue }}</span>
         </div>
 

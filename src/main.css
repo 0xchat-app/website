@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --accent: #10b981;
-  --accent-light: #34d399;
+  --accent: #888BF9;
+  --accent-light: #a8aafb;
 }
 
 * {
