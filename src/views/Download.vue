@@ -117,21 +117,26 @@
         </a>
       </div>
 
-      <!-- Terminal quick-start hint -->
-      <div class="mt-10 border border-zinc-800 rounded-2xl overflow-hidden">
-        <div class="bg-[#18181b] px-4 py-2.5 flex items-center gap-1.5">
-          <span class="w-2.5 h-2.5 rounded-full bg-red-500" />
-          <span class="w-2.5 h-2.5 rounded-full bg-amber-500" />
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-          <span class="ml-3 font-mono text-xs text-zinc-500">0xchat — quick start</span>
+      <!-- Quick-start info -->
+      <div class="mt-10 border border-gray-200 rounded-2xl p-6 bg-gray-50">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="w-2 h-2 rounded-full bg-emerald-500" />
+          <span class="font-semibold text-gray-900 text-sm">Getting started is simple</span>
         </div>
-        <div class="bg-[#09090b] px-6 py-5 font-mono text-sm space-y-1.5">
-          <div><span class="text-zinc-500"># </span><span class="text-zinc-400">No account needed — just your Nostr key</span></div>
-          <div class="mt-2"><span class="text-zinc-500">$ </span><span class="text-white">open 0xchat</span></div>
-          <div><span class="text-emerald-400">✓ </span><span class="text-zinc-400">Generate or import your nsec key</span></div>
-          <div><span class="text-emerald-400">✓ </span><span class="text-zinc-400">Connect to relays automatically</span></div>
-          <div><span class="text-emerald-400">✓ </span><span class="text-zinc-400">Start messaging privately</span></div>
-        </div>
+        <ol class="space-y-3">
+          <li class="flex items-start gap-3">
+            <span class="shrink-0 w-5 h-5 rounded-full bg-gray-200 text-gray-600 text-[10px] font-bold flex items-center justify-center mt-0.5">1</span>
+            <span class="text-sm text-gray-600">Download for your platform above</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="shrink-0 w-5 h-5 rounded-full bg-gray-200 text-gray-600 text-[10px] font-bold flex items-center justify-center mt-0.5">2</span>
+            <span class="text-sm text-gray-600">Generate or import your Nostr key — no email or phone needed</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="shrink-0 w-5 h-5 rounded-full bg-gray-200 text-gray-600 text-[10px] font-bold flex items-center justify-center mt-0.5">3</span>
+            <span class="text-sm text-gray-600">Connect to relays automatically and start messaging privately</span>
+          </li>
+        </ol>
       </div>
     </div>
   </main>
