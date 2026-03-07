@@ -1,108 +1,69 @@
 <template>
-  <section id="services" class="relative min-h-screen flex items-center pl-6 md:pl-12 pr-6 md:pr-28 overflow-hidden bg-black">
-    <!-- Animated background elements -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div class="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-3xl animate-pulse-slow" />
-      <div class="absolute bottom-1/4 left-1/3 w-[600px] h-[600px] bg-cyan-300/10 rounded-full blur-3xl animate-pulse-slower" />
-    </div>
-
-    <!-- Side Label (Vertical) -->
-    <div class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-10">
-      <span
-        class="font-mono text-xs uppercase tracking-[0.3em] text-gray-400 rotate-90 origin-right block whitespace-nowrap hover-gradient-text transition-colors duration-300"
-      >
-        SERVICES
-      </span>
-    </div>
-
-    <div class="flex flex-col items-stretch justify-center h-full relative z-10 max-w-6xl ml-auto">
-      <!-- Section Header -->
-      <div class="mb-12 text-right">
-        <span class="font-mono text-[10px] uppercase tracking-[0.3em] gradient-text"> 02 / What We Offer </span>
-        <h2 class="mt-4 text-4xl md:text-6xl tracking-tight text-white font-bold"> FEATURES</h2>
-        <p class="mt-4 font-mono text-sm text-gray-400 max-w-2xl ml-auto">
-          Everything you need to launch and grow 0xchat — a fast, private messaging app built for real-world use.
-        </p>
-        <div class="flex items-center justify-end my-8 gap-4">
-          <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-l from-[#C084FC] via-[#818CF8] to-transparent" />
-          <font-awesome-icon icon="fa-solid fa-bolt" class="gradient-icon text-2xl" />
+  <section id="services" class="bg-white py-28 border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <!-- Header -->
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-16">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-widest text-emerald-600">02 / What we offer</span>
+          <h2 class="mt-3 text-4xl md:text-5xl font-black text-gray-900 tracking-tight">Features</h2>
+          <p class="mt-3 text-gray-500 max-w-lg leading-relaxed">
+            Everything you need for fast, private, decentralized messaging — built on open standards.
+          </p>
+        </div>
+        <div class="shrink-0">
+          <div class="h-px w-32 bg-gray-200" />
         </div>
       </div>
 
-      <!-- Services Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl ml-auto">
+      <!-- Feature marquee -->
+      <div class="relative overflow-hidden">
+        <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+        <div class="flex gap-4 animate-marquee py-2">
+          <div
+            v-for="(service, i) in [...services, ...services]"
+            :key="i"
+            class="shrink-0 w-72 border border-gray-200 rounded-2xl p-6 bg-white hover:-translate-y-1 hover:shadow-md hover:border-gray-300 transition-all duration-200 cursor-default"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-gray-50 border border-gray-200 flex items-center justify-center">
+                <font-awesome-icon :icon="service.icon" class="text-gray-700 text-sm" />
+              </div>
+              <div class="flex flex-wrap gap-1 justify-end max-w-[120px]">
+                <span
+                  v-for="(tech, ti) in service.tech.slice(0, 2)"
+                  :key="ti"
+                  class="font-mono text-[9px] uppercase tracking-wider bg-gray-50 border border-gray-200 text-gray-500 px-2 py-0.5 rounded-full"
+                >{{ tech }}</span>
+              </div>
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm mb-1.5">{{ service.title }}</h3>
+            <p class="font-mono text-xs text-gray-400 leading-relaxed">{{ service.description }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detailed grid -->
+      <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         <div
           v-for="(service, index) in services"
           :key="index"
-          @mouseenter="activeService = index"
-          @mouseleave="activeService = null"
-          class="group relative border border-gray-800/40 p-8 transition-all duration-500 cursor-pointer hover:border-gradient-feature text-right"
-          :class="activeService === index ? 'bg-gradient-feature-light' : ''"
+          class="group border border-gray-100 rounded-2xl p-6 hover:border-gray-300 hover:shadow-sm transition-all duration-200"
         >
-          <!-- Animated corner bracket -->
-          <div class="absolute top-0 right-0 w-16 h-16 transition-all duration-500" :class="activeService === index ? 'opacity-100' : 'opacity-0'">
-            <div class="absolute top-0 right-0 w-full h-[2px] bg-gradient-to-l from-[#C084FC] via-[#818CF8] to-transparent" />
-            <div class="absolute top-0 right-0 w-[2px] h-full bg-gradient-to-b from-[#C084FC] via-[#818CF8] to-transparent" />
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-lg bg-gray-900 flex items-center justify-center">
+              <font-awesome-icon :icon="service.icon" class="text-white text-xs" />
+            </div>
+            <span class="font-mono text-[10px] uppercase tracking-widest text-gray-400">{{ String(index + 1).padStart(2, '0') }}</span>
           </div>
-
-          <!-- Service number -->
-          <div class="flex items-start justify-between mb-6">
+          <h3 class="font-bold text-gray-900 mb-1.5">{{ service.title }}</h3>
+          <p class="font-mono text-xs text-gray-400 leading-relaxed mb-4">{{ service.description }}</p>
+          <div class="flex flex-wrap gap-1.5">
             <span
-              class="font-mono text-6xl text-gray-800/40 font-bold transition-all duration-300"
-              :class="activeService === index ? 'text-gradient-feature-number' : ''"
-            >
-              {{ String(index + 1).padStart(2, "0") }}
-            </span>
-            <div class="text-5xl transition-transform duration-500" :class="activeService === index ? 'scale-110' : ''">
-              <font-awesome-icon :icon="service.icon" class="transition-colors duration-300" :class="activeService === index ? 'gradient-icon' : 'text-gray-400'" />
-            </div>
-          </div>
-
-          <!-- Service content -->
-          <div class="relative z-10">
-            <h3
-              class="text-2xl md:text-3xl tracking-tight mb-3 transition-colors duration-300 font-bold"
-              :class="activeService === index ? 'gradient-text' : 'text-white'"
-            >
-              {{ service.title }}
-            </h3>
-
-            <p class="font-mono text-xs text-gray-400 leading-relaxed mb-4 transition-all duration-300" :class="activeService === index ? 'text-gray-300' : ''">
-              {{ service.description }}
-            </p>
-
-            <!-- Tech stack tags -->
-            <div class="flex flex-wrap gap-2 justify-end mb-4">
-              <span
-                v-for="(tech, techIndex) in service.tech"
-                :key="techIndex"
-                class="font-mono text-[9px] px-2 py-1 border border-gray-700 rounded uppercase tracking-wider transition-all duration-300"
-                :class="activeService === index ? 'border-gradient-feature-tag text-gradient-feature-tag' : 'text-gray-500'"
-              >
-                {{ tech }}
-              </span>
-            </div>
-
-            <!-- Features list -->
-            <div class="space-y-2 transition-all duration-500 overflow-hidden" :class="activeService === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'">
-              <div class="h-[1px] bg-gradient-to-l from-[#C084FC]/40 via-[#818CF8]/40 to-transparent mb-3" />
-              <div
-                v-for="(feature, featureIndex) in service.features"
-                :key="featureIndex"
-                class="flex items-center justify-end gap-2 font-mono text-xs text-gray-400"
-              >
-                <span>{{ feature }}</span>
-                <span class="gradient-text">→</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Hover indicator -->
-          <div
-            class="absolute left-4 top-1/2 -translate-y-1/2 transition-all duration-300"
-            :class="activeService === index ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'"
-          >
-            <span class="gradient-text text-xl">→</span>
+              v-for="(tech, ti) in service.tech"
+              :key="ti"
+              class="font-mono text-[9px] uppercase tracking-wider bg-gray-50 border border-gray-200 text-gray-500 px-2 py-0.5 rounded-full"
+            >{{ tech }}</span>
           </div>
         </div>
       </div>
@@ -111,167 +72,68 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-
-const activeService = ref(null);
+import { ref } from 'vue'
 
 const services = ref([
   {
-    icon: "fa-solid fa-wand-magic-sparkles",
-    title: "Easy to use",
-    description: "No Registration Required - Skip the usual hassle of providing a phone number, email, or name.",
-    tech: ["No Setup", "Instant Access", "User Friendly"],
-    features: ["Just dive right in", "Free from friction", "Seamless communication", "Zero barriers to entry"],
+    icon: 'fa-solid fa-wand-magic-sparkles',
+    title: 'Easy to use',
+    description: 'No registration required. Skip phone numbers, email, and account setup.',
+    tech: ['No Setup', 'Instant Access', 'User Friendly'],
   },
   {
-    icon: "fa-solid fa-link",
-    title: "Built on the Nostr protocol",
-    description: "You are in control of your data - decentralized and open communication.",
-    tech: ["Decentralized", "Open Source", "Nostr"],
-    features: ["Own your data", "No central server", "Open protocol", "Full control & freedom"],
+    icon: 'fa-solid fa-link',
+    title: 'Built on Nostr',
+    description: 'Decentralized and open. You own your data — no central server.',
+    tech: ['Decentralized', 'Open Source', 'Nostr'],
   },
   {
-    icon: "fa-solid fa-lock",
-    title: "Encrypted Messages",
-    description: "Our direct messages and friends list are secured with end-to-end encryption.",
-    tech: ["E2E Encryption", "Privacy", "Security"],
-    features: ["Private conversations", "Encrypted contacts list", "Secure friends management", "Only you and contacts see messages"],
+    icon: 'fa-solid fa-lock',
+    title: 'Encrypted Messages',
+    description: 'Direct messages and friends list secured with end-to-end encryption.',
+    tech: ['E2E Encryption', 'Privacy', 'Security'],
   },
   {
-    icon: "fa-solid fa-users",
-    title: "Private Group",
-    description: "Create encrypted group chats with friends, family, or colleagues.",
-    tech: ["Group Chat", "Encryption", "Privacy"],
-    features: ["Encrypted group chats", "Member management", "Group privacy", "Invite-only control"],
+    icon: 'fa-solid fa-users',
+    title: 'Private Groups',
+    description: 'Create encrypted group chats with friends, family, or colleagues.',
+    tech: ['Group Chat', 'Encryption', 'Privacy'],
   },
   {
-    icon: "fa-solid fa-phone",
-    title: "Voice & Video Calls",
-    description: "Experience simple and private face-to-face communication with high-definition calls.",
-    tech: ["WebRTC", "HD Quality", "P2P"],
-    features: ["High-definition audio", "Video calls", "Custom ICE service", "Enhanced privacy options"],
+    icon: 'fa-solid fa-phone',
+    title: 'Voice & Video Calls',
+    description: 'High-definition peer-to-peer calls without a central signaling server.',
+    tech: ['WebRTC', 'HD Quality', 'P2P'],
   },
   {
-    icon: "fa-solid fa-bolt",
-    title: "Lightning Payments",
-    description: "Integrated with the Cashu wallet, making transfers and payments effortless.",
-    tech: ["Lightning Network", "Cashu", "Instant Payments"],
-    features: ["Instant transactions", "Easy transfers", "Secure payments", "Integrated wallet"],
-  },
-  // New feature additions
-  {
-    icon: "fa-solid fa-network-wired",
-    title: "Relay Groups",
-    description: "Coordinate large group messaging across relay groups for scale.",
-    tech: ["Relay Groups", "Scaling", "NIP-29"],
-    features: ["Large group support", "Relay coordination", "Better scalability", "Configurable policies"],
+    icon: 'fa-solid fa-bolt',
+    title: 'Lightning Payments',
+    description: 'Integrated Cashu wallet for instant, private Bitcoin transfers.',
+    tech: ['Lightning', 'Cashu', 'Instant'],
   },
   {
-    icon: "fa-solid fa-newspaper",
-    title: "Nostr Posts",
-    description: "Create and interact with Nostr notes and long-form content.",
-    tech: ["Posts", "Notes", "Nostr"],
-    features: ["Publish notes", "Read timelines", "Reply & react", "Share content"],
+    icon: 'fa-solid fa-network-wired',
+    title: 'Relay Groups',
+    description: 'Coordinate large group messaging across relay groups for scale.',
+    tech: ['NIP-29', 'Relay Groups', 'Scaling'],
   },
   {
-    icon: "fa-solid fa-puzzle-piece",
-    title: "Napps (Nostr Apps)",
-    description: "Run embedded Nostr apps inside the client with safe permissions.",
-    tech: ["Napps", "Extensions", "Embedded"],
-    features: ["Launch in-app apps", "Secure permissions", "Seamless integration", "Discover tools"],
+    icon: 'fa-solid fa-newspaper',
+    title: 'Nostr Posts',
+    description: 'Create and interact with Nostr notes and long-form content.',
+    tech: ['Posts', 'Notes', 'Nostr'],
   },
   {
-    icon: "fa-solid fa-user-secret",
-    title: "Embedded Tor",
-    description: "Route traffic via Tor to reduce metadata and enhance privacy.",
-    tech: ["Tor", "Privacy", "Anonymity"],
-    features: ["Tor routing", "Less metadata", "Optional per feature", "Censorship resistance"],
+    icon: 'fa-solid fa-puzzle-piece',
+    title: 'Napps',
+    description: 'Run embedded Nostr apps inside the client with safe sandboxed permissions.',
+    tech: ['Napps', 'Extensions', 'Embedded'],
   },
-]);
+  {
+    icon: 'fa-solid fa-user-secret',
+    title: 'Embedded Tor',
+    description: 'Route traffic via Tor to reduce metadata exposure and enhance privacy.',
+    tech: ['Tor', 'Privacy', 'Anonymity'],
+  },
+])
 </script>
-
-<style scoped>
-/* Gradient utility classes */
-.gradient-text {
-  background: linear-gradient(135deg, #C084FC 0%, #818CF8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hover-gradient-text:hover {
-  background: linear-gradient(135deg, #C084FC 0%, #818CF8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.gradient-icon {
-  color: #818CF8;
-  transition: color 0.3s ease;
-}
-
-.gradient-icon:hover {
-  color: #C084FC;
-}
-
-.hover\:border-gradient-feature:hover {
-  border-color: #C084FC;
-  border-image: linear-gradient(135deg, #C084FC 0%, #818CF8 100%) 1;
-}
-
-.bg-gradient-feature-light {
-  background: linear-gradient(135deg, rgba(192, 132, 252, 0.05) 0%, rgba(129, 140, 248, 0.05) 100%);
-}
-
-.text-gradient-feature-number {
-  background: linear-gradient(135deg, rgba(192, 132, 252, 0.2) 0%, rgba(129, 140, 248, 0.2) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.border-gradient-feature-tag {
-  border-color: rgba(192, 132, 252, 0.4);
-  border-image: linear-gradient(135deg, rgba(192, 132, 252, 0.4) 0%, rgba(129, 140, 248, 0.4) 100%) 1;
-}
-
-.text-gradient-feature-tag {
-  background: linear-gradient(135deg, #C084FC 0%, #818CF8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-@keyframes pulse-slow {
-  0%,
-  100% {
-    opacity: 0.1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.15;
-    transform: scale(1.1);
-  }
-}
-
-@keyframes pulse-slower {
-  0%,
-  100% {
-    opacity: 0.05;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.1;
-    transform: scale(1.05);
-  }
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 8s ease-in-out infinite;
-}
-
-.animate-pulse-slower {
-  animation: pulse-slower 12s ease-in-out infinite;
-}
-</style>

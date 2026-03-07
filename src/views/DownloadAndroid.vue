@@ -1,199 +1,92 @@
 <template>
-  <main
-    class="flex flex-col items-center justify-center min-h-screen bg-black px-4 py-12"
-  >
-    <div class="w-full max-w-6xl mx-auto animate-fade-in-up">
-      <header class="text-center mb-16">
-        <h1
-          class="text-5xl md:text-6xl font-black text-white mb-4 tracking-tight"
+  <main class="min-h-screen bg-white">
+    <div class="h-[3px] bg-emerald-500" />
+    <div class="max-w-2xl mx-auto px-6 py-16 animate-fade-up">
+      <router-link to="/download" class="inline-flex items-center gap-2 font-mono text-xs text-gray-400 hover:text-gray-900 transition-colors mb-12">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        All platforms
+      </router-link>
+
+      <div class="flex items-center gap-4 mb-8">
+        <div class="w-16 h-16 rounded-2xl bg-gray-900 flex items-center justify-center">
+          <font-awesome-icon icon="fa-brands fa-android" class="text-white text-2xl" />
+        </div>
+        <div>
+          <h1 class="text-3xl font-black text-gray-900 tracking-tight">Android</h1>
+          <p class="font-mono text-xs text-gray-400 mt-0.5">Phones &amp; tablets · Android 8.0+</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <a
+          href="https://play.google.com/store/apps/details?id=com.oxchat.nostr"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center justify-between bg-white border border-gray-200 rounded-2xl px-6 py-5 hover:border-gray-400 hover:shadow-sm transition-all duration-200"
+          aria-label="Open 0xchat on Google Play"
         >
-          DOWNLOAD 0XCHAT⚡️
-        </h1>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-          Get 0xchat for Android devices
-        </p>
-      </header>
-
-      <section aria-label="Android Download" class="w-full max-w-3xl mx-auto">
-        <div
-          class="group relative overflow-hidden bg-gray-900 rounded-3xl p-8 border border-gray-700"
-        >
-          <div
-            class="absolute top-0 right-0 -mt-8 -mr-8 w-40 h-40 bg-green-100 rounded-full blur-3xl opacity-60 transition-opacity duration-500"
-          ></div>
-
-          <div class="relative z-10">
-            <div
-              class="flex items-center justify-center w-20 h-20 bg-green-900/30 rounded-2xl mb-6"
-            >
-              <font-awesome-icon icon="fa-brands fa-android" class="text-4xl text-white" />
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-gray-100 border border-gray-100 flex items-center justify-center">
+              <font-awesome-icon icon="fa-brands fa-google-play" class="text-gray-700 text-xl" />
             </div>
-
-            <h2 class="text-2xl font-bold text-white mb-2">Android</h2>
-            <p class="text-gray-300 leading-relaxed mb-6">
-              Download from Google Play or get the latest release from GitHub
-            </p>
-
-            <div class="space-y-3">
-              <a
-                href="https://play.google.com/store/apps/details?id=com.oxchat.nostr"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex items-center justify-between w-full rounded-2xl px-6 py-4 bg-black/30 border border-gray-700 hover:border-green-400/60 hover:bg-black/50 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-green-500 group"
-                aria-label="Open 0xchat on Google Play"
-              >
-                <span class="flex items-center gap-4 text-white font-semibold">
-                  <div class="flex items-center justify-center w-14 h-14 bg-green-900/40 rounded-xl group-hover:bg-green-800/50 transition-colors">
-                    <font-awesome-icon icon="fa-brands fa-google-play" class="text-2xl text-green-300" />
-                  </div>
-                  Google Play
-                </span>
-                <span
-                  class="flex items-center text-green-400 font-semibold text-sm"
-                >
-                  Open
-                  <svg
-                    class="w-4 h-4 ml-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </span>
-              </a>
-
-              <a
-                href="https://github.com/0xchat-app"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex items-center justify-between w-full rounded-2xl px-6 py-4 bg-black/30 border border-gray-700 hover:border-green-400/60 hover:bg-black/50 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-green-500 group"
-                aria-label="Open 0xchat on GitHub"
-              >
-                <span class="flex items-center gap-4 text-white font-semibold">
-                  <div class="flex items-center justify-center w-14 h-14 bg-gray-700/40 rounded-xl group-hover:bg-gray-600/50 transition-colors">
-                    <font-awesome-icon icon="fa-brands fa-github" class="text-2xl text-gray-300" />
-                  </div>
-                  GitHub Releases
-                </span>
-                <span
-                  class="flex items-center text-green-400 font-semibold text-sm"
-                >
-                  Open
-                  <svg
-                    class="w-4 h-4 ml-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </span>
-              </a>
-            </div>
-
-            <div class="mt-8 pt-8 border-t border-gray-700">
-              <h3 class="text-lg font-bold text-white mb-4">Requirements</h3>
-              <ul class="space-y-2 text-sm text-gray-400">
-                <li class="flex items-center gap-2">
-                  <svg
-                    class="w-4 h-4 text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                  Android 8.0 or later
-                </li>
-                <li class="flex items-center gap-2">
-                  <svg
-                    class="w-4 h-4 text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                  Compatible with phones and tablets
-                </li>
-                <li class="flex items-center gap-2">
-                  <svg
-                    class="w-4 h-4 text-green-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                  Free to download and use
-                </li>
-              </ul>
+            <div>
+              <div class="font-bold text-gray-900">Google Play</div>
+              <div class="font-mono text-xs text-gray-400">Stable release</div>
             </div>
           </div>
-        </div>
-      </section>
+          <div class="flex items-center gap-2">
+            <span class="font-mono text-[9px] uppercase tracking-wider bg-emerald-50 border border-emerald-200 text-emerald-700 px-2 py-0.5 rounded-full">Recommended</span>
+            <svg class="w-4 h-4 text-gray-300 group-hover:text-gray-900 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
 
-      <div class="text-center mt-10">
-        <router-link
-          to="/download"
-          class="inline-flex items-center text-gray-400 hover:text-green-400 transition-colors font-semibold"
+        <a
+          href="https://github.com/0xchat-app"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center justify-between bg-white border border-gray-200 rounded-2xl px-6 py-5 hover:border-gray-400 hover:shadow-sm transition-all duration-200"
+          aria-label="Open 0xchat on GitHub"
         >
-          <svg
-            class="w-5 h-5 mr-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-          Back to Download Options
-        </router-link>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-gray-100 border border-gray-100 flex items-center justify-center">
+              <font-awesome-icon icon="fa-brands fa-github" class="text-gray-700 text-xl" />
+            </div>
+            <div>
+              <div class="font-bold text-gray-900">GitHub Releases</div>
+              <div class="font-mono text-xs text-gray-400">Direct APK download</div>
+            </div>
+          </div>
+          <svg class="w-4 h-4 text-gray-300 group-hover:text-gray-900 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="mt-8 border border-gray-100 rounded-2xl p-5 bg-gray-50">
+        <h3 class="font-bold text-gray-900 text-sm mb-3">Requirements</h3>
+        <ul class="space-y-2">
+          <li class="flex items-center gap-2 font-mono text-xs text-gray-500">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+            Android 8.0 or later
+          </li>
+          <li class="flex items-center gap-2 font-mono text-xs text-gray-500">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+            Compatible with phones and tablets
+          </li>
+          <li class="flex items-center gap-2 font-mono text-xs text-gray-500">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+            Free to download and use
+          </li>
+        </ul>
       </div>
     </div>
   </main>
 </template>
 
-<script setup>
-</script>
-
 <style scoped>
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.animate-fade-up {
+  animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 </style>

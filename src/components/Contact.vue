@@ -1,158 +1,77 @@
 <template>
-  <section id="contact" class="relative py-48 pl-6 md:pl-12 pr-6 md:pr-28 overflow-hidden bg-black">
-    <!-- Animated background elements -->
-    <div class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-[#C084FC]/10 to-[#818CF8]/10 rounded-full blur-3xl opacity-20 animate-pulse" />
-    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-[#C084FC]/10 to-[#818CF8]/10 rounded-full blur-3xl opacity-20 animate-pulse" style="animation-delay: 2s" />
-
-    <div class="relative z-10 max-w-4xl ml-auto">
-      <!-- Emoji decoration -->
-
-      <!-- Section Header -->
-      <div class="mb-12 text-right">
-        <span class="font-mono text-[10px] uppercase tracking-[0.3em] gradient-text"> 04 / Support </span>
-        <h2 class="mt-4 text-4xl md:text-6xl tracking-tight text-white font-bold animate-fade-in">CONTACT</h2>
-        <p class="mt-4 font-mono text-sm text-gray-400 max-w-2xl ml-auto">
+  <section id="contact" class="bg-gray-50 py-28 border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <!-- Header -->
+      <div class="mb-16">
+        <span class="font-mono text-xs uppercase tracking-widest text-emerald-600">05 / Support</span>
+        <h2 class="mt-3 text-4xl md:text-5xl font-black text-gray-900 tracking-tight">Contact</h2>
+        <p class="mt-3 text-gray-500 max-w-xl leading-relaxed">
           Support, feedback, and community — everything you need to get the most out of 0xchat.
         </p>
-        <div class="flex items-center justify-end my-8 gap-4">
-          <div class="flex-1 max-w-xs h-[1px] bg-gradient-to-l from-[#C084FC] via-[#818CF8] to-transparent" />
-          <font-awesome-icon icon="fa-solid fa-bolt" class="gradient-icon text-2xl" />
+      </div>
+
+      <!-- Email CTA -->
+      <a
+        href="mailto:support@0xchat.com"
+        class="group flex items-center justify-between bg-white border border-gray-200 rounded-2xl px-8 py-7 hover:border-gray-400 hover:shadow-md transition-all duration-200 mb-8"
+      >
+        <div>
+          <div class="font-mono text-xs uppercase tracking-widest text-gray-400 mb-1">Contact support</div>
+          <div class="text-2xl md:text-3xl font-black text-gray-900 group-hover:text-emerald-600 transition-colors">
+            support@0xchat.com
+          </div>
+          <div class="font-mono text-xs text-gray-400 mt-1">
+            Help with setup, login, notifications, and account recovery
+          </div>
         </div>
-      </div>
+        <div class="w-12 h-12 rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center group-hover:bg-emerald-50 group-hover:border-emerald-200 transition-colors shrink-0">
+          <font-awesome-icon icon="fa-solid fa-envelope" class="text-gray-500 group-hover:text-emerald-600 transition-colors" />
+        </div>
+      </a>
 
-      <!-- Email container with interactive effect -->
-      <div class="relative mb-12">
-        <!-- Animated border -->
-        <div
-          class="absolute inset-0 bg-gradient-to-r from-[#C084FC] via-[#818CF8] to-[#C084FC] rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur p-[2px]"
-        />
-
-        <!-- Email content -->
-        <a href="mailto:support@0xchat.com" class="group relative block">
-          <div
-            class="relative bg-black border border-gradient-contact rounded-lg px-8 md:px-12 py-6 md:py-8 transition-all duration-500 group-hover:border-gradient-contact-hover group-hover:shadow-lg group-hover:shadow-gradient-contact w-fit ml-auto text-right"
-          >
-            <div class="flex items-center justify-end gap-3 mb-3">
-              <font-awesome-icon icon="fa-solid fa-envelope" class="w-5 h-5 md:w-6 md:h-6 gradient-icon" />
-              <p class="font-mono text-sm md:text-lg text-gray-400 tracking-wider">CONTACT SUPPORT</p>
-            </div>
-            <p
-              class="font-[var(--font-orbitron)] text-3xl md:text-5xl gradient-text transition-all duration-300 group-hover:text-white group-hover:scale-105"
-            >
-              support@0xchat.com
-            </p>
-            <p class="font-mono text-xs md:text-sm text-gray-500 mt-4 transition-all duration-300 group-hover:text-gray-300">
-              // Help with setup, login, notifications, and account recovery
-            </p>
-          </div>
-        </a>
-      </div>
-
-      <!-- Quick actions -->
-      <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl ml-auto">
+      <!-- Action grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
         <a
-          href="mailto:support@0xchat.com?subject=0xchat%20Support%20Request"
-          class="group border border-gradient-contact-card rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-gradient-contact-card-hover hover:shadow-lg hover:shadow-gradient-contact-card"
+          v-for="action in actions"
+          :key="action.label"
+          :href="action.href"
+          :target="action.external ? '_blank' : undefined"
+          :rel="action.external ? 'noopener noreferrer' : undefined"
+          class="group flex items-center gap-4 bg-white border border-gray-200 rounded-2xl px-5 py-4 hover:border-gray-400 hover:shadow-sm transition-all duration-200"
         >
-          <div class="flex items-center justify-end gap-3">
-            <font-awesome-icon icon="fa-solid fa-comment" class="w-5 h-5 gradient-icon" />
-            <p class="font-[var(--font-orbitron)] text-lg text-white">Get Support</p>
+          <div class="w-9 h-9 rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center shrink-0 group-hover:bg-gray-900 group-hover:border-gray-900 transition-colors">
+            <font-awesome-icon :icon="action.icon" class="text-gray-500 text-xs group-hover:text-white transition-colors" />
           </div>
-          <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Share device, OS version, and screenshots if possible</p>
-        </a>
-
-        <a
-          href="mailto:support@0xchat.com?subject=0xchat%20Feedback"
-          class="group border border-gradient-contact-card rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-gradient-contact-card-hover hover:shadow-lg hover:shadow-gradient-contact-card"
-        >
-          <div class="flex items-center justify-end gap-3">
-            <font-awesome-icon icon="fa-solid fa-wand-magic-sparkles" class="w-5 h-5 gradient-icon" />
-            <p class="font-[var(--font-orbitron)] text-lg text-white">Send Feedback</p>
+          <div>
+            <div class="font-bold text-gray-900 text-sm">{{ action.label }}</div>
+            <div class="font-mono text-xs text-gray-400 mt-0.5">{{ action.desc }}</div>
           </div>
-          <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Tell us what to improve — UX, features, or performance</p>
-        </a>
-
-        <a
-          href="https://github.com/0xchat-app"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group border border-gradient-contact-card rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-gradient-contact-card-hover hover:shadow-lg hover:shadow-gradient-contact-card"
-          aria-label="Open 0xchat on GitHub"
-        >
-          <div class="flex items-center justify-end gap-3">
-            <font-awesome-icon icon="fa-solid fa-bug" class="w-5 h-5 gradient-icon" />
-            <p class="font-[var(--font-orbitron)] text-lg text-white">Report a Bug</p>
-          </div>
-          <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Prefer GitHub for reproducible crashes and logs</p>
-        </a>
-
-        <a
-          href="https://github.com/0xchat-app"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group border border-gradient-contact-card rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-gradient-contact-card-hover hover:shadow-lg hover:shadow-gradient-contact-card"
-          aria-label="Open 0xchat on GitHub"
-        >
-          <div class="flex items-center justify-end gap-3">
-            <font-awesome-icon icon="fa-brands fa-github" class="w-5 h-5 gradient-icon" />
-            <p class="font-[var(--font-orbitron)] text-lg text-white">Open Source</p>
-          </div>
-          <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Releases, changelog, and contributions</p>
-        </a>
-
-        <a
-          href="https://primal.net/search/%230xchat"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group border border-gradient-contact-card rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-gradient-contact-card-hover hover:shadow-lg hover:shadow-gradient-contact-card"
-          aria-label="See what people are saying about 0xchat on Primal"
-        >
-          <div class="flex items-center justify-end gap-3">
-            <font-awesome-icon icon="fa-solid fa-magnifying-glass" class="w-5 h-5 gradient-icon" />
-            <p class="font-[var(--font-orbitron)] text-lg text-white">What People Say</p>
-          </div>
-          <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Browse #0xchat posts on Primal</p>
-        </a>
-
-        <a
-          href="https://primal.net/p/nprofile1qqs9ajjs5p904ml92evlkayppdpx2n3zdrq6ejnw2wqphxrzmd62swswfwcse"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group border border-gradient-contact-card rounded-2xl px-6 py-5 bg-black transition-all duration-300 hover:border-gradient-contact-card-hover hover:shadow-lg hover:shadow-gradient-contact-card"
-          aria-label="Open the official 0xchat profile on Primal"
-        >
-          <div class="flex items-center justify-end gap-3">
-            <font-awesome-icon icon="fa-solid fa-certificate" class="w-5 h-5 gradient-icon" />
-            <p class="font-[var(--font-orbitron)] text-lg text-white">Official Profile</p>
-          </div>
-          <p class="mt-3 font-mono text-xs text-gray-400 text-right">// Follow 0xchat on Primal</p>
         </a>
       </div>
 
-      <!-- Stats or trust indicators -->
-      <div class="mt-24 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 max-w-3xl ml-auto">
-        <div class="group text-right">
-          <div class="flex items-center justify-end gap-2 mb-2">
-            <font-awesome-icon icon="fa-solid fa-shield" class="w-5 h-5 gradient-icon" />
-            <p class="font-[var(--font-orbitron)] text-2xl md:text-3xl gradient-text group-hover:scale-105 transition-transform duration-300">Privacy</p>
+      <!-- Trust indicators -->
+      <div class="grid grid-cols-3 gap-6 border-t border-gray-200 pt-12">
+        <div v-for="trust in trustStats" :key="trust.label" class="text-center">
+          <div class="flex items-center justify-center gap-1.5 mb-1">
+            <span class="w-2 h-2 rounded-full bg-emerald-500" />
+            <span class="font-black text-gray-900 text-xl">{{ trust.value }}</span>
           </div>
-          <p class="font-mono text-xs md:text-sm text-gray-400 uppercase tracking-wider">Default Secure</p>
+          <div class="font-mono text-xs text-gray-400 uppercase tracking-wider">{{ trust.label }}</div>
         </div>
+      </div>
 
-        <div class="group text-right">
-          <div class="flex items-center justify-end gap-2 mb-2">
-            <font-awesome-icon icon="fa-solid fa-bolt" class="w-5 h-5 gradient-icon" />
-            <p class="font-[var(--font-orbitron)] text-2xl md:text-3xl gradient-text group-hover:scale-105 transition-transform duration-300">Fast</p>
-          </div>
-          <p class="font-mono text-xs md:text-sm text-gray-400 uppercase tracking-wider">Built for Chat</p>
+      <!-- Footer -->
+      <div class="mt-16 pt-8 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <img src="/logo.png" alt="0xchat" class="w-6 h-6 rounded-md" />
+          <span class="font-bold text-gray-900 text-sm">0xchat</span>
+          <span class="text-gray-300 mx-2">·</span>
+          <span class="font-mono text-xs text-gray-400">Open source · Nostr protocol</span>
         </div>
-
-        <div class="group text-right">
-          <div class="flex items-center justify-end gap-2 mb-2">
-            <font-awesome-icon icon="fa-solid fa-code-branch" class="w-5 h-5 gradient-icon" />
-            <p class="font-[var(--font-orbitron)] text-2xl md:text-3xl gradient-text group-hover:scale-105 transition-transform duration-300">Open</p>
-          </div>
-          <p class="font-mono text-xs md:text-sm text-gray-400 uppercase tracking-wider">Ship Together</p>
+        <div class="flex items-center gap-6">
+          <a href="/xchat-privacy-policy.html" class="font-mono text-xs text-gray-400 hover:text-gray-900 transition-colors">Privacy Policy</a>
+          <a href="/xchat-terms-of-use.html" class="font-mono text-xs text-gray-400 hover:text-gray-900 transition-colors">Terms of Use</a>
+          <a href="https://github.com/0xchat-app" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-gray-400 hover:text-gray-900 transition-colors">GitHub</a>
         </div>
       </div>
     </div>
@@ -160,66 +79,18 @@
 </template>
 
 <script setup>
+const actions = [
+  { icon: 'fa-solid fa-comment', label: 'Get Support', desc: 'Setup, login, notifications', href: 'mailto:support@0xchat.com?subject=0xchat%20Support%20Request', external: false },
+  { icon: 'fa-solid fa-wand-magic-sparkles', label: 'Send Feedback', desc: 'UX, features, performance', href: 'mailto:support@0xchat.com?subject=0xchat%20Feedback', external: false },
+  { icon: 'fa-solid fa-bug', label: 'Report a Bug', desc: 'Crashes and reproducible issues', href: 'https://github.com/0xchat-app', external: true },
+  { icon: 'fa-brands fa-github', label: 'Open Source', desc: 'Releases, changelog, contributions', href: 'https://github.com/0xchat-app', external: true },
+  { icon: 'fa-solid fa-magnifying-glass', label: 'What People Say', desc: 'Browse #0xchat on Primal', href: 'https://primal.net/search/%230xchat', external: true },
+  { icon: 'fa-solid fa-certificate', label: 'Official Profile', desc: 'Follow 0xchat on Primal', href: 'https://primal.net/p/nprofile1qqs9ajjs5p904ml92evlkayppdpx2n3zdrq6ejnw2wqphxrzmd62swswfwcse', external: true },
+]
+
+const trustStats = [
+  { value: 'Private', label: 'Default Secure' },
+  { value: 'Fast', label: 'Built for Chat' },
+  { value: 'Open', label: 'Ship Together' },
+]
 </script>
-
-<style scoped>
-/* Gradient utility classes */
-.gradient-text {
-  background: linear-gradient(135deg, #C084FC 0%, #818CF8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.gradient-icon {
-  color: #818CF8;
-  transition: color 0.3s ease;
-}
-
-.gradient-icon:hover {
-  color: #C084FC;
-}
-
-.border-gradient-contact {
-  border-color: rgba(192, 132, 252, 0.4);
-  border-image: linear-gradient(135deg, rgba(192, 132, 252, 0.4) 0%, rgba(129, 140, 248, 0.4) 100%) 1;
-}
-
-.group-hover\:border-gradient-contact-hover:hover {
-  border-color: rgba(192, 132, 252, 0.8);
-  border-image: linear-gradient(135deg, rgba(192, 132, 252, 0.8) 0%, rgba(129, 140, 248, 0.8) 100%) 1;
-}
-
-.group-hover\:shadow-gradient-contact:hover {
-  box-shadow: 0 10px 30px rgba(192, 132, 252, 0.2);
-}
-
-.border-gradient-contact-card {
-  border-color: rgba(192, 132, 252, 0.3);
-  border-image: linear-gradient(135deg, rgba(192, 132, 252, 0.3) 0%, rgba(129, 140, 248, 0.3) 100%) 1;
-}
-
-.hover\:border-gradient-contact-card-hover:hover {
-  border-color: rgba(192, 132, 252, 0.7);
-  border-image: linear-gradient(135deg, rgba(192, 132, 252, 0.7) 0%, rgba(129, 140, 248, 0.7) 100%) 1;
-}
-
-.hover\:shadow-gradient-contact-card:hover {
-  box-shadow: 0 10px 30px rgba(192, 132, 252, 0.1);
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out;
-}
-</style>

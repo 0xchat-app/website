@@ -1,48 +1,57 @@
 <template>
-  <div class="x-invite">
-    <div class="container">
-      <img class="logo" src="/icon_lite.png" alt="XChat" />
-      <h1>You've been invited!</h1>
-      <p class="subtitle">Scan the QR code to connect with friends</p>
-      
-      <div class="qr-section">
-        <h3>Scan to Connect</h3>
-        <div class="qr-code" id="qrCode"></div>
-        <p class="qr-text">Open XChat app</p>
-        <p class="qr-text-small">Tap + → Scan QR Code</p>
+  <div class="min-h-screen bg-white flex items-center justify-center px-4 py-16">
+    <div class="w-full max-w-md">
+      <!-- Top accent -->
+      <div class="h-[3px] bg-emerald-500 rounded-full mb-10" />
+
+      <!-- Logo + Title -->
+      <div class="flex items-center gap-4 mb-8">
+        <img src="/icon_lite.png" alt="XChat" class="w-14 h-14 rounded-2xl shadow-md" />
+        <div>
+          <h1 class="text-2xl font-black text-gray-900 tracking-tight">You've been invited!</h1>
+          <p class="font-mono text-xs text-gray-400 mt-0.5">Scan the QR code to connect</p>
+        </div>
       </div>
-      
-      <div class="divider"></div>
-      
-      <!-- Dynamic button section based on app installation and platform -->
-      <div class="action-buttons">
-        <!-- Show open button if app is installed -->
-        <button v-if="isAppInstalled" @click="openApp" class="action-btn open-btn">
-          <span>Open XChat</span>
+
+      <!-- QR code card -->
+      <div class="border border-gray-200 rounded-2xl p-6 mb-4 bg-gray-50 text-center">
+        <p class="font-mono text-xs uppercase tracking-widest text-gray-400 mb-4">Scan to Connect</p>
+        <div id="qrCode" class="flex justify-center mb-4" />
+        <p class="font-mono text-xs text-gray-500">Open XChat app</p>
+        <p class="font-mono text-[10px] text-gray-400 mt-0.5">Tap + → Scan QR Code</p>
+      </div>
+
+      <!-- Open app button -->
+      <div v-if="isAppInstalled" class="mb-4">
+        <button
+          @click="openApp"
+          class="w-full bg-gray-900 text-white font-bold text-sm py-4 rounded-2xl hover:bg-gray-700 transition-colors"
+        >
+          Open XChat
         </button>
-        
-        <!-- Download buttons are now handled automatically in openApp function -->
-        <!-- If app is not installed, user will be redirected to appropriate download page -->
       </div>
-      
-      <div class="features">
-        <h3>Why XChat?</h3>
-        <ul class="feature-list">
-          <li>MLS End-to-end encryption</li>
-          <li>Local encrypted storage</li>
-          <li>Circle concept with independent config</li>
-          <li>Native UI design for each platform</li>
-          <li>Perfect for private groups</li>
-          <li>Minimal & fast interface</li>
+
+      <div class="h-px bg-gray-100 my-6" />
+
+      <!-- Why XChat -->
+      <div class="border border-gray-200 rounded-2xl p-6 mb-4">
+        <h3 class="font-bold text-gray-900 text-sm mb-4">Why XChat?</h3>
+        <ul class="space-y-2.5">
+          <li v-for="feat in features" :key="feat" class="flex items-center gap-3 font-mono text-xs text-gray-500">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+            {{ feat }}
+          </li>
         </ul>
       </div>
-      
-      <div class="fallback">
-        <h4>Having trouble connecting?</h4>
-        <ul>
-          <li>Make sure XChat is installed and updated</li>
-          <li>Clear your browser cache</li>
-          <li>Check your internet connection</li>
+
+      <!-- Troubleshooting -->
+      <div class="border border-gray-100 rounded-2xl p-5 bg-gray-50">
+        <h4 class="font-bold text-gray-700 text-xs mb-3">Having trouble connecting?</h4>
+        <ul class="space-y-1.5">
+          <li v-for="tip in tips" :key="tip" class="flex items-center gap-2 font-mono text-[10px] text-gray-400">
+            <span class="text-gray-300">·</span>
+            {{ tip }}
+          </li>
         </ul>
       </div>
     </div>
@@ -201,255 +210,26 @@ export default defineComponent({
       isAppInstalled: computed(() => appInstalled.value),
       isCheckingApp: computed(() => isCheckingApp.value),
       openApp,
-      generateQRCode
+      generateQRCode,
+      features: [
+        'MLS end-to-end encryption',
+        'Local encrypted storage',
+        'Circle concept with independent config',
+        'Native UI design for each platform',
+        'Perfect for private groups',
+        'Minimal & fast interface',
+      ],
+      tips: [
+        'Make sure XChat is installed and updated',
+        'Clear your browser cache',
+        'Check your internet connection',
+      ],
     }
   }
 })
 </script>
 
+
 <style scoped>
-.x-invite {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-.container {
-  background: white;
-  border-radius: 20px;
-  padding: 40px;
-  max-width: 500px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 20px;
-  display: block;
-  border-radius: 16px;
-  position: relative;
-  /* iPhone app icon shadow effects */
-  box-shadow: 
-    0 2px 4px rgba(0, 0, 0, 0.15),
-    0 4px 8px rgba(0, 0, 0, 0.15),
-    0 8px 16px rgba(0, 0, 0, 0.15),
-    0 16px 32px rgba(0, 0, 0, 0.1);
-  transform: translateZ(0);
-  transition: all 0.3s ease;
-}
-
-/* Add a subtle inner shadow and highlight for more depth */
-.logo::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 16px;
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.3) 0%,
-    rgba(255, 255, 255, 0.1) 50%,
-    rgba(0, 0, 0, 0.05) 100%);
-  pointer-events: none;
-}
-
-/* Add inner shadow for more depth */
-.logo::after {
-  content: '';
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  right: 1px;
-  bottom: 1px;
-  border-radius: 15px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  pointer-events: none;
-}
-
-/* Hover effect for interactive feel */
-.logo:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 
-    0 4px 8px rgba(0, 0, 0, 0.2),
-    0 8px 16px rgba(0, 0, 0, 0.2),
-    0 16px 32px rgba(0, 0, 0, 0.2),
-    0 32px 64px rgba(0, 0, 0, 0.15);
-}
-
-h1 {
-  color: #333;
-  font-size: 28px;
-  font-weight: 700;
-  margin: 0 auto 10px;
-  text-align: center;
-}
-
-.subtitle {
-  color: #666;
-  font-size: 16px;
-  margin-bottom: 30px;
-}
-
-.qr-section {
-  margin-bottom: 30px;
-}
-
-.qr-section h3 {
-  color: #333;
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-.qr-code {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-
-.qr-text {
-  color: #333;
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-
-.qr-text-small {
-  color: #999;
-  font-size: 12px;
-  margin-bottom: 0;
-}
-
-.divider {
-  height: 1px;
-  background: #eee;
-  margin: 30px 0;
-}
-
-/* Action buttons section */
-.action-buttons {
-  margin-bottom: 30px;
-}
-
-.action-btn {
-  display: inline-block;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  min-width: 200px;
-}
-
-.open-btn {
-  background: linear-gradient(135deg, #be84fc 0%, #838cf9 100%);
-  color: white;
-}
-
-.open-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(52, 168, 83, 0.4);
-}
-
-/* Download button styles removed - no longer needed */
-
-.features {
-  margin-bottom: 30px;
-}
-
-.features h3 {
-  color: #333;
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-.feature-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: left;
-}
-
-.feature-list li {
-  color: #666;
-  font-size: 14px;
-  padding: 8px 0;
-  border-bottom: 1px solid #f0f0f0;
-  position: relative;
-  padding-left: 20px;
-}
-
-.feature-list li:before {
-  content: "✓";
-  color: #34A853;
-  font-weight: bold;
-  position: absolute;
-  left: 0;
-}
-
-.feature-list li:last-child {
-  border-bottom: none;
-}
-
-.fallback {
-  background: #f8f9fa;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: left;
-}
-
-.fallback h4 {
-  color: #333;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.fallback ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.fallback li {
-  color: #666;
-  font-size: 14px;
-  padding: 5px 0;
-  position: relative;
-  padding-left: 15px;
-}
-
-.fallback li:before {
-  content: "•";
-  color: #999;
-  position: absolute;
-  left: 0;
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 30px 20px;
-  }
-  
-  h1 {
-    font-size: 24px;
-  }
-  
-  .download-btn {
-    display: block;
-    margin: 0 0 10px 0;
-  }
-  
-  .action-btn {
-    min-width: 100%;
-  }
-}
+/* No additional styles — Tailwind handles everything */
 </style>

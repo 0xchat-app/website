@@ -1,10 +1,10 @@
 <template>
-  <div class="min-h-screen bg-black">
+  <div class="min-h-screen bg-white">
     <Hero />
     <Features />
     <SupportedNIPs />
-    <Contact />
     <FAQ />
+    <Contact />
   </div>
 </template>
 
