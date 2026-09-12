@@ -1,0 +1,9 @@
+# Apple requires the AASA file to be served as JSON. It has no file
+# extension, so the content type cannot be inferred from the path.
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+
+# Vite emits content-hashed filenames under /assets, so they can be
+# cached indefinitely.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
